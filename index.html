@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Pro Barber Bali Solution | Premium Grooming in Ubud</title>
+    <title>PRO BARBER BALI | Premium Home Service & Private Grooming</title>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -16,592 +16,414 @@
                         slate: { 800: '#1e293b', 900: '#0f172a', 950: '#020617' }
                     },
                     fontFamily: {
-                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
                     }
                 }
             }
         }
     </script>
     
-    <!-- FontAwesome -->
+    <!-- Icons & Fonts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
     
-    <!-- Custom Styles -->
     <style>
         .no-scrollbar::-webkit-scrollbar { display: none; }
-        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-        html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+        html { scroll-behavior: smooth; }
         .bg-hero {
             background-image: url('https://i.postimg.cc/WpKFzRDt/IMG_9373.jpg');
             background-size: cover;
             background-position: center;
         }
-        
-        /* Widget App Styles */
         .app-view {
-            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
             position: absolute;
             inset: 0;
-            background-color: #0f172a; /* slate-900 */
+            background-color: #0f172a; 
             display: flex;
             flex-direction: column;
         }
-        /* Custom Checkbox */
-        .custom-radio { transition: all 0.2s; }
-        .service-active .custom-radio { border-color: #f59e0b; background-color: #f59e0b; }
-        .service-active .custom-radio::after {
-            content: '\f00c'; font-family: 'Font Awesome 6 Free'; font-weight: 900;
-            color: #020617; font-size: 12px; position: absolute; top: 50%; left: 50%;
-            transform: translate(-50%, -50%);
+        .srv-card.active {
+            border-color: #f59e0b;
+            background-color: rgba(245, 158, 11, 0.1);
+        }
+        input:focus, textarea:focus {
+            border-color: #f59e0b !important;
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.2);
+        }
+        .img-card:hover img {
+            transform: scale(1.1);
         }
     </style>
 </head>
-<body class="bg-slate-950 text-slate-200 font-sans antialiased selection:bg-amber-500 selection:text-slate-950">
+<body class="bg-slate-950 text-slate-200 antialiased selection:bg-amber-500 selection:text-slate-950">
 
-    <!-- Navigation -->
-    <nav class="fixed top-0 w-full bg-slate-950/95 backdrop-blur-md z-50 border-b border-slate-800 transition-all">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <div class="flex items-center gap-3">
-                <img src="https://i.postimg.cc/hv8HkW60/7E38079E-E3EB-41A3-BB85-31A344F99CE1.png" alt="Pro Barber Logo" class="h-10 md:h-12 w-auto object-contain">
-            </div>
-            <div class="hidden md:flex items-center gap-8 text-sm font-medium uppercase tracking-widest text-slate-300">
-                <a href="#booking-section" class="hover:text-amber-500 transition-colors">Services</a>
-                <a href="#gallery-section" class="hover:text-amber-500 transition-colors">Gallery</a>
-                <a href="#info-section" class="hover:text-amber-500 transition-colors">Location</a>
-                <a href="#booking-section" class="border border-amber-500 text-amber-500 px-6 py-2 rounded-sm hover:bg-amber-500 hover:text-slate-950 transition-colors">
-                    Book Now
-                </a>
-            </div>
-            <a href="#booking-section" class="md:hidden text-amber-500 border border-amber-500 px-5 py-2 rounded-sm text-xs font-bold uppercase tracking-wider bg-amber-500/10">
-                BOOK NOW
-            </a>
+    <!-- Navigasi -->
+    <nav class="fixed top-0 w-full bg-slate-950/80 backdrop-blur-xl z-50 border-b border-slate-800 h-20 flex items-center justify-between px-6">
+        <div class="flex items-center gap-3">
+            <img src="https://i.postimg.cc/hv8HkW60/7E38079E-E3EB-41A3-BB85-31A344F99CE1.png" alt="Pro Barber Logo" class="h-10 w-auto">
         </div>
+        <div class="hidden lg:flex gap-8 text-[10px] font-black uppercase tracking-[0.3em]">
+            <a href="#gallery" class="hover:text-amber-500 transition-colors">Gallery</a>
+            <a href="#pricelist" class="hover:text-amber-500 transition-colors">Prices</a>
+            <a href="#booking" class="hover:text-amber-500 transition-colors">Booking</a>
+        </div>
+        <a href="#booking" class="bg-amber-500 text-slate-950 px-6 py-2.5 rounded-full text-xs font-black uppercase tracking-widest hover:scale-105 active:scale-95 transition-all">RESERVE</a>
     </nav>
 
     <!-- Hero Section -->
-    <section class="relative pt-32 pb-20 md:pt-48 md:pb-32 px-6 flex items-center justify-center min-h-[85vh] bg-hero">
-        <div class="absolute inset-0 bg-gradient-to-b from-slate-950/90 via-slate-950/80 to-slate-950 z-0"></div>
-        
+    <section class="relative pt-32 pb-24 px-6 flex items-center justify-center min-h-screen bg-hero">
+        <div class="absolute inset-0 bg-gradient-to-b from-slate-950/70 via-slate-950/80 to-slate-950"></div>
         <div class="max-w-4xl mx-auto text-center relative z-10">
-            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-900/80 backdrop-blur border border-slate-700 mb-8 shadow-2xl">
-                <i class="fa-solid fa-location-dot text-amber-500 text-xs"></i>
-                <span class="text-xs uppercase tracking-widest text-amber-500 font-semibold">Ubud, Bali</span>
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900/80 border border-slate-700 mb-8">
+                <span class="text-[10px] uppercase tracking-[0.4em] text-amber-500 font-extrabold">Exclusive Home Barber Service</span>
             </div>
-            <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight leading-tight drop-shadow-xl">
-                Elevate Your Style.<br class="hidden md:block"/> <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-600">Refine Your Look.</span>
-            </h1>
-            <p class="text-lg md:text-xl text-slate-300 mb-10 max-w-2xl mx-auto leading-relaxed drop-shadow-md">
-                Welcome to <span class="text-white font-semibold">Pro Barber Bali Solution</span>—Ubud's premier grooming sanctuary for the modern gentleman.
-            </p>
-            <a href="#booking-section" class="inline-flex justify-center items-center gap-2 bg-amber-500 text-slate-950 px-8 py-4 rounded-sm hover:bg-amber-400 transition-colors uppercase font-bold tracking-widest">
-                Book Your Chair <i class="fa-solid fa-chevron-down"></i>
-            </a>
+            <h1 class="text-5xl md:text-8xl font-extrabold text-white mb-8 leading-[1.1] tracking-tighter">Private Grooming <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-600">At Your Location.</span></h1>
+            <p class="text-slate-300 mb-12 max-w-2xl mx-auto text-base md:text-xl leading-relaxed font-medium italic">"Designed for gentlemen who value precision, comfort, and privacy."</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#booking" class="bg-amber-500 text-slate-950 px-10 py-5 rounded-full font-black uppercase tracking-widest shadow-2xl shadow-amber-500/20 hover:bg-amber-400 transition-all text-sm">Book Session</a>
+                <a href="#gallery" class="bg-slate-900/50 border border-slate-700 text-white px-10 py-5 rounded-full font-black uppercase tracking-widest hover:bg-slate-800 transition-all text-sm">View Work</a>
+            </div>
         </div>
     </section>
 
-    <!-- Essential Info Banner -->
-    <div class="bg-amber-500 text-slate-950 py-3 px-6 text-center text-sm font-bold uppercase tracking-widest flex flex-wrap justify-center gap-x-8 gap-y-2">
-        <span><i class="fa-regular fa-clock mr-2"></i> Open Everyday: 11:00 - 20:00</span>
-        <span><i class="fa-solid fa-martini-glass-citrus mr-2"></i> Complimentary cold beverage</span>
-    </div>
-
-    <!-- BOOKING WIDGET SECTION (FRESHA STYLE) -->
-    <section id="booking-section" class="py-24 px-6 bg-slate-950 border-b border-slate-900 relative">
-        <div class="max-w-4xl mx-auto">
-            
-            <div class="text-center mb-10">
-                <h2 class="text-3xl font-bold text-white mb-4 uppercase tracking-widest">Reserve Your Appointment</h2>
-                <div class="w-16 h-1 bg-amber-500 mx-auto"></div>
+    <!-- Gallery / Signature Looks -->
+    <section id="gallery" class="py-24 px-6 bg-slate-950">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-amber-500 text-[10px] font-black uppercase tracking-[0.5em] mb-4">The Portfolio</h2>
+                <h3 class="text-3xl md:text-5xl font-extrabold text-white uppercase tracking-tighter">Signature Looks</h3>
+                <div class="w-16 h-1 bg-amber-500 mx-auto mt-6"></div>
             </div>
 
-            <!-- APP WIDGET CONTAINER -->
-            <div class="max-w-md mx-auto h-[650px] bg-slate-900 border border-slate-700 rounded-2xl shadow-2xl shadow-amber-500/10 relative overflow-hidden flex flex-col">
-                
-                <!-- HEADER -->
-                <header class="flex-shrink-0 bg-slate-900 border-b border-slate-800 z-20">
-                    <div class="px-4 py-3 flex items-center justify-between border-b border-slate-800/50">
-                        <div class="flex items-center gap-3">
-                            <img src="https://i.postimg.cc/hv8HkW60/7E38079E-E3EB-41A3-BB85-31A344F99CE1.png" alt="Logo" class="h-8 w-8 object-contain">
-                            <div>
-                                <h1 class="font-bold text-white text-sm leading-tight">Pro Barber Bali Solution</h1>
-                                <p class="text-xs text-slate-400">Ubud, Bali</p>
-                            </div>
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+                <!-- Foto 1 -->
+                <div class="relative overflow-hidden rounded-[2rem] aspect-[4/5] bg-slate-900 img-card group">
+                    <img src="https://i.postimg.cc/vHV16P9b/IMG-9372.jpg" alt="Hasil Potongan 1" class="w-full h-full object-cover transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
+                        <p class="text-[10px] font-black uppercase tracking-widest text-amber-500">Precision Fade</p>
+                    </div>
+                </div>
+                <!-- Foto 2 -->
+                <div class="relative overflow-hidden rounded-[2rem] aspect-[4/5] bg-slate-900 img-card group md:mt-8">
+                    <img src="https://i.postimg.cc/kMZ6GrVB/IMG_9377.jpg" alt="Hasil Potongan 2" class="w-full h-full object-cover transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
+                        <p class="text-[10px] font-black uppercase tracking-widest text-amber-500">Beard Contouring</p>
+                    </div>
+                </div>
+                <!-- Foto 3 -->
+                <div class="relative overflow-hidden rounded-[2rem] aspect-[4/5] bg-slate-900 img-card group">
+                    <img src="https://i.postimg.cc/DyXWbCsF/IMG_9378.jpg" alt="Hasil Potongan 3" class="w-full h-full object-cover transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
+                        <p class="text-[10px] font-black uppercase tracking-widest text-amber-500">Modern Taper</p>
+                    </div>
+                </div>
+                <!-- Foto 4 -->
+                <div class="relative overflow-hidden rounded-[2rem] aspect-[4/5] bg-slate-900 img-card group md:mt-8">
+                    <img src="https://i.postimg.cc/9XSR0340/IMG_9380.jpg" alt="Hasil Potongan 4" class="w-full h-full object-cover transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
+                        <p class="text-[10px] font-black uppercase tracking-widest text-amber-500">Clean Finish</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-20 p-10 bg-slate-900/30 rounded-[3rem] border border-slate-800 text-center">
+                <p class="text-slate-400 text-sm leading-relaxed max-w-2xl mx-auto">Kami mengkhususkan diri dalam potongan rambut modern, penataan jenggot klasik, dan ritual grooming VIP yang dibawa langsung ke kenyamanan villa Anda.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricelist Section -->
+    <section id="pricelist" class="py-24 px-6 bg-slate-900/20 border-y border-slate-900">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-extrabold text-white uppercase tracking-tighter">Price List</h2>
+                <div class="w-16 h-1 bg-amber-500 mx-auto mt-6"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+                <!-- Srv 1 -->
+                <div class="bg-slate-900/60 border border-slate-800 p-8 rounded-[2.5rem] flex flex-col hover:border-amber-500/30 transition-all">
+                    <div class="flex justify-between items-start mb-6">
+                        <i class="fa-solid fa-scissors text-amber-500 text-2xl"></i>
+                        <span class="text-[9px] font-black text-slate-500 uppercase tracking-widest">60 Mins</span>
+                    </div>
+                    <h3 class="text-white font-extrabold text-lg mb-2">Men’s Haircut</h3>
+                    <p class="text-slate-400 text-xs mb-8 leading-relaxed">Tailored precision cut designed to complement your personal style. Includes refined styling finish.</p>
+                    <div class="mt-auto font-black text-amber-500 text-xl tracking-tight">IDR 300,000</div>
+                </div>
+                <!-- Srv 2 -->
+                <div class="bg-slate-900/60 border border-slate-800 p-8 rounded-[2.5rem] flex flex-col hover:border-amber-500/30 transition-all">
+                    <div class="flex justify-between items-start mb-6">
+                        <i class="fa-solid fa-ghost text-amber-500 text-2xl"></i>
+                        <span class="text-[9px] font-black text-slate-500 uppercase tracking-widest">45-60 Mins</span>
+                    </div>
+                    <h3 class="text-white font-extrabold text-lg mb-2">Bald / Clean Shave</h3>
+                    <p class="text-slate-400 text-xs mb-8 leading-relaxed">Achieve a smooth, sharp bald finish with detailed razor work and scalp refinement.</p>
+                    <div class="mt-auto font-black text-amber-500 text-xl tracking-tight">IDR 300,000</div>
+                </div>
+                <!-- Srv 3 -->
+                <div class="bg-slate-900/60 border border-amber-500/50 p-8 rounded-[2.5rem] flex flex-col shadow-2xl shadow-amber-500/5 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-amber-500 text-slate-950 text-[8px] font-black px-4 py-1.5 uppercase tracking-widest">Recommended</div>
+                    <div class="flex justify-between items-start mb-6">
+                        <i class="fa-solid fa-user-check text-amber-500 text-2xl"></i>
+                        <span class="text-[9px] font-black text-slate-500 uppercase tracking-widest">75 Mins</span>
+                    </div>
+                    <h3 class="text-white font-extrabold text-lg mb-2">Haircut & Beard</h3>
+                    <p class="text-slate-400 text-xs mb-8 leading-relaxed">A complete session combining precision haircut and meticulous beard contouring.</p>
+                    <div class="mt-auto font-black text-amber-500 text-xl tracking-tight">IDR 450,000</div>
+                </div>
+                <!-- Srv 4 -->
+                <div class="bg-slate-950 border border-amber-500 p-8 rounded-[2.5rem] flex flex-col">
+                    <div class="flex justify-between items-start mb-6">
+                        <i class="fa-solid fa-crown text-amber-500 text-2xl"></i>
+                        <span class="text-[9px] font-black text-slate-500 uppercase tracking-widest">90 Mins</span>
+                    </div>
+                    <h3 class="text-white font-extrabold text-lg mb-2">VIP Experience</h3>
+                    <p class="text-slate-400 text-xs mb-8 leading-relaxed">Full ritual: Cut, beard sculpting, nose & ear waxing, and premium styling finish.</p>
+                    <div class="mt-auto font-black text-amber-500 text-xl tracking-tight">IDR 600,000</div>
+                </div>
+                <!-- Srv 5 -->
+                <div class="bg-slate-900/60 border border-slate-800 p-8 rounded-[2.5rem] flex flex-col lg:col-span-2">
+                    <div class="flex justify-between items-start mb-6">
+                        <i class="fa-solid fa-people-group text-amber-500 text-2xl"></i>
+                        <span class="text-[9px] font-black text-slate-500 uppercase tracking-widest">90 Mins</span>
+                    </div>
+                    <h3 class="text-white font-extrabold text-lg mb-2">Father & Son Experience</h3>
+                    <p class="text-slate-400 text-xs mb-8 leading-relaxed">Two precision haircuts delivered in your private space. (Son under 15).</p>
+                    <div class="mt-auto font-black text-amber-500 text-xl tracking-tight">IDR 550,000</div>
+                </div>
+            </div>
+
+            <!-- Optional Enhancements -->
+            <div class="bg-slate-900/30 border border-slate-800 p-10 rounded-[3rem]">
+                <h4 class="text-white font-black text-sm uppercase tracking-widest mb-8 flex items-center gap-3">
+                    <span class="w-6 h-6 rounded-full bg-amber-500 flex items-center justify-center text-slate-950 text-[10px]">✨</span> 
+                    Optional Enhancements
+                </h4>
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div>
+                        <span class="text-[8px] font-black text-slate-600 uppercase block mb-1">Long Hair</span>
+                        <span class="text-white font-bold text-xs uppercase">Scissor Cut Only</span>
+                        <p class="text-amber-500 font-black text-xs mt-1">+IDR 100k</p>
+                    </div>
+                    <div>
+                        <span class="text-[8px] font-black text-slate-600 uppercase block mb-1">Gray Camo</span>
+                        <span class="text-white font-bold text-xs uppercase">Coverage</span>
+                        <p class="text-amber-500 font-black text-xs mt-1">+IDR 150k</p>
+                    </div>
+                    <div>
+                        <span class="text-[8px] font-black text-slate-600 uppercase block mb-1">Early Morning</span>
+                        <span class="text-white font-bold text-xs uppercase">Before 09:00 AM</span>
+                        <p class="text-amber-500 font-black text-xs mt-1">+IDR 100k</p>
+                    </div>
+                    <div>
+                        <span class="text-[8px] font-black text-slate-600 uppercase block mb-1">Outside Ubud</span>
+                        <span class="text-white font-bold text-xs uppercase">Travel Fee</span>
+                        <p class="text-amber-500 font-black text-xs mt-1">100k–200k</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Widget -->
+    <section id="booking" class="py-24 px-6 bg-slate-950">
+        <div class="max-w-md mx-auto">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-black text-white uppercase tracking-tighter">Reservation</h2>
+                <p class="text-slate-500 text-sm mt-4 font-medium uppercase tracking-widest text-[10px]">Private Home Service Only</p>
+            </div>
+
+            <div class="h-[780px] bg-slate-900 border border-slate-800 rounded-[3rem] shadow-2xl relative overflow-hidden flex flex-col">
+                <header class="p-6 border-b border-slate-800 flex items-center justify-between bg-slate-900/50">
+                    <div class="flex items-center gap-4">
+                        <img src="https://i.postimg.cc/hv8HkW60/7E38079E-E3EB-41A3-BB85-31A344F99CE1.png" class="h-6">
+                        <div>
+                            <h3 id="step-title" class="font-extrabold text-white text-[10px] uppercase tracking-widest">Select Service</h3>
+                            <p id="step-count" class="text-[9px] text-slate-500 mt-0.5 uppercase">Langkah 1/3</p>
                         </div>
                     </div>
-                    <div class="flex items-center px-4 py-3">
-                        <button id="btn-back" class="hidden w-8 h-8 flex items-center justify-center rounded-full bg-slate-800 text-slate-300 hover:text-white transition-colors mr-3" onclick="prevStep()">
-                            <i class="fa-solid fa-arrow-left"></i>
-                        </button>
-                        <h2 id="header-title" class="font-semibold text-white text-base">Select service</h2>
-                    </div>
+                    <button id="btn-back" onclick="handlePrev()" class="hidden text-slate-500 hover:text-white transition-colors text-[10px] font-black uppercase">Back</button>
                 </header>
 
-                <!-- VIEWS CONTAINER -->
                 <div class="flex-1 relative overflow-hidden">
-                    
-                    <!-- STEP 1: SERVICES -->
-                    <div id="view-1" class="app-view overflow-y-auto no-scrollbar pb-24" style="transform: translateX(0);">
-                        <div class="p-4 space-y-3" id="services-list">
-                            <!-- Services injected here -->
+                    <!-- Step 1 -->
+                    <div id="view-1" class="app-view p-6 space-y-2.5 overflow-y-auto no-scrollbar" style="transform: translateX(0);">
+                        <div onclick="setS(1, 'Men\'s Haircut', '300,000')" class="s-card border border-slate-800 p-4 rounded-2xl bg-slate-800/30 flex justify-between items-center cursor-pointer transition-all">
+                            <div><h4 class="font-bold text-white text-[11px] uppercase">Men's Haircut</h4><p class="text-[9px] text-slate-500">IDR 300k</p></div>
+                            <div class="w-4 h-4 rounded-full border border-slate-700 circle"></div>
+                        </div>
+                        <div onclick="setS(2, 'Bald / Clean Shave', '300,000')" class="s-card border border-slate-800 p-4 rounded-2xl bg-slate-800/30 flex justify-between items-center cursor-pointer transition-all">
+                            <div><h4 class="font-bold text-white text-[11px] uppercase">Bald / Clean Shave</h4><p class="text-[9px] text-slate-500">IDR 300k</p></div>
+                            <div class="w-4 h-4 rounded-full border border-slate-700 circle"></div>
+                        </div>
+                        <div onclick="setS(3, 'Haircut & Beard Grooming', '450,000')" class="s-card border border-slate-800 p-4 rounded-2xl bg-slate-800/30 flex justify-between items-center cursor-pointer transition-all">
+                            <div><h4 class="font-bold text-white text-[11px] uppercase">Haircut & Beard</h4><p class="text-[9px] text-slate-500">IDR 450k</p></div>
+                            <div class="w-4 h-4 rounded-full border border-slate-700 circle"></div>
+                        </div>
+                        <div onclick="setS(4, 'VIP Grooming Experience', '600,000')" class="s-card border border-slate-800 p-4 rounded-2xl bg-slate-800/30 flex justify-between items-center cursor-pointer transition-all">
+                            <div><h4 class="font-bold text-white text-[11px] uppercase">VIP Experience</h4><p class="text-[9px] text-slate-500">IDR 600k</p></div>
+                            <div class="w-4 h-4 rounded-full border border-slate-700 circle"></div>
+                        </div>
+                        <div onclick="setS(5, 'Father & Son Experience', '550,000')" class="s-card border border-slate-800 p-4 rounded-2xl bg-slate-800/30 flex justify-between items-center cursor-pointer transition-all">
+                            <div><h4 class="font-bold text-white text-[11px] uppercase">Father & Son</h4><p class="text-[9px] text-slate-500">IDR 550k</p></div>
+                            <div class="w-4 h-4 rounded-full border border-slate-700 circle"></div>
                         </div>
                     </div>
 
-                    <!-- STEP 2: DATE & TIME -->
-                    <div id="view-2" class="app-view overflow-y-auto no-scrollbar pb-24" style="transform: translateX(100%);">
-                        <div class="bg-slate-800/50 p-4 border-b border-slate-800 flex justify-between items-center">
-                            <div>
-                                <h4 class="font-bold text-white text-sm" id="dt-service-name">-</h4>
-                                <p class="text-xs text-slate-400 mt-1" id="dt-service-duration">-</p>
-                            </div>
-                            <p class="font-bold text-amber-500 text-sm" id="dt-service-price">-</p>
+                    <!-- Step 2 -->
+                    <div id="view-2" class="app-view p-6 space-y-6" style="transform: translateX(100%);">
+                        <div>
+                            <p class="text-[9px] font-black text-slate-600 uppercase mb-3 tracking-widest">Select Date</p>
+                            <div id="date-list" class="flex gap-3 overflow-x-auto pb-2 no-scrollbar"></div>
                         </div>
-                        <div class="py-4 border-b border-slate-800">
-                            <h3 class="px-4 text-xs font-bold text-slate-400 uppercase tracking-widest mb-3">Select Date</h3>
-                            <div class="flex gap-2 overflow-x-auto px-4 pb-2 snap-x no-scrollbar" id="date-list">
-                                <!-- Dates injected here -->
-                            </div>
-                        </div>
-                        <div class="p-4" id="time-section">
-                            <h3 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-3">Select Time</h3>
-                            <div class="grid grid-cols-3 gap-3" id="time-list">
-                                <!-- Times injected here -->
-                            </div>
+                        <div>
+                            <p class="text-[9px] font-black text-slate-600 uppercase mb-3 tracking-widest">Select Time</p>
+                            <div id="time-list" class="grid grid-cols-3 gap-2"></div>
                         </div>
                     </div>
 
-                    <!-- STEP 3: DETAILS -->
-                    <div id="view-3" class="app-view overflow-y-auto no-scrollbar pb-24 p-4" style="transform: translateX(100%);">
-                        <div class="bg-slate-800/50 rounded-lg border border-slate-700 p-4 mb-5">
-                            <h3 class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-3 border-b border-slate-700 pb-2">Appointment Summary</h3>
-                            <div class="flex gap-4 mb-4">
-                                <div class="w-10 h-10 bg-slate-900 rounded border border-slate-700 flex items-center justify-center text-amber-500">
-                                    <i class="fa-regular fa-calendar-check"></i>
-                                </div>
-                                <div>
-                                    <p class="font-bold text-white text-sm" id="summary-date">-</p>
-                                    <p class="text-xs text-slate-400 mt-0.5" id="summary-time">-</p>
-                                </div>
-                            </div>
-                            <div class="flex justify-between items-center border-t border-slate-700 pt-3">
-                                <div>
-                                    <p class="font-medium text-white text-sm" id="summary-service-name">-</p>
-                                </div>
-                                <p class="font-bold text-amber-500 text-sm" id="summary-final-price">-</p>
-                            </div>
+                    <!-- Step 3 -->
+                    <div id="view-3" class="app-view p-6 space-y-4 overflow-y-auto no-scrollbar" style="transform: translateX(100%);">
+                        <div class="bg-amber-500 text-slate-950 p-5 rounded-[2rem]">
+                            <p id="sum-s" class="font-black text-[11px] uppercase tracking-tight">-</p>
+                            <p id="sum-d" class="text-[10px] font-bold opacity-80 mt-1">-</p>
                         </div>
-
-                        <h3 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-3">Your Details</h3>
-                        <form id="booking-form" class="space-y-3">
-                            <div>
-                                <input required type="text" id="input-name" class="w-full bg-slate-800/50 border border-slate-700 text-white rounded-lg py-3 px-4 focus:outline-none focus:border-amber-500 text-sm" placeholder="Full Name">
+                        <div class="space-y-3">
+                            <div class="grid grid-cols-2 gap-3">
+                                <input type="text" id="i-name" placeholder="Full Name" class="bg-slate-800 border border-slate-700 p-4 rounded-2xl text-[11px] text-white w-full">
+                                <input type="tel" id="i-wa" placeholder="WhatsApp (08...)" class="bg-slate-800 border border-slate-700 p-4 rounded-2xl text-[11px] text-white w-full">
                             </div>
-                            <div>
-                                <input required type="tel" id="input-phone" class="w-full bg-slate-800/50 border border-slate-700 text-white rounded-lg py-3 px-4 focus:outline-none focus:border-amber-500 text-sm" placeholder="WhatsApp Number (e.g. 0812...)">
-                            </div>
-                            <div>
-                                <textarea id="input-notes" rows="2" class="w-full bg-slate-800/50 border border-slate-700 text-white rounded-lg py-3 px-4 focus:outline-none focus:border-amber-500 text-sm resize-none" placeholder="Add a note (Optional)"></textarea>
-                            </div>
-                        </form>
+                            <input type="url" id="i-maps" placeholder="Google Maps Link (Required)" class="bg-slate-800 border border-slate-700 p-4 rounded-2xl text-[11px] text-white w-full">
+                            <input type="text" id="i-villa" placeholder="Villa / Hotel Name" class="bg-slate-800 border border-slate-700 p-4 rounded-2xl text-[11px] text-white w-full">
+                            <textarea id="i-addr" rows="2" placeholder="Full Address Details" class="bg-slate-800 border border-slate-700 p-4 rounded-2xl text-[11px] text-white w-full resize-none"></textarea>
+                            <textarea id="i-note" rows="2" placeholder="Special Request / Note" class="bg-slate-800 border border-slate-700 p-4 rounded-2xl text-[11px] text-white w-full resize-none"></textarea>
+                            <p class="text-[8px] text-slate-600 text-center uppercase tracking-widest font-black">Confirmed via WhatsApp Approval</p>
+                        </div>
                     </div>
 
-                    <!-- STEP 4: SUCCESS -->
-                    <div id="view-4" class="app-view p-6 flex flex-col items-center justify-center z-50 bg-slate-900" style="transform: translateX(100%);">
-                        <i class="fa-brands fa-whatsapp text-6xl text-[#25D366] mb-6 animate-pulse"></i>
-                        <h2 class="text-2xl font-bold text-white mb-2 text-center">Opening WhatsApp...</h2>
-                        <p class="text-slate-400 text-sm text-center mb-8">Please hit "Send" in your WhatsApp application to secure this booking with our admin.</p>
-                        <button onclick="location.reload()" class="text-amber-500 uppercase tracking-widest text-xs font-bold border-b border-amber-500 pb-1">Return Home</button>
+                    <!-- Step 4 -->
+                    <div id="view-4" class="app-view items-center justify-center p-10 text-center" style="transform: translateX(100%);">
+                        <i class="fa-brands fa-whatsapp text-6xl text-green-500 animate-pulse mb-6"></i>
+                        <h3 class="text-xl font-black text-white uppercase tracking-tighter">Connecting...</h3>
                     </div>
-
                 </div>
 
-                <!-- FIXED BOTTOM BAR -->
-                <footer class="absolute bottom-0 w-full bg-slate-900 border-t border-slate-800 p-4 z-30" id="bottom-bar">
-                    <button id="btn-action" class="w-full bg-slate-800 text-slate-500 py-3.5 rounded-lg font-bold text-sm tracking-wide transition-all duration-300 flex justify-center items-center gap-2 cursor-not-allowed" onclick="nextStep()" disabled>
-                        Continue
-                    </button>
+                <footer class="p-6 bg-slate-900 border-t border-slate-800">
+                    <button id="btn-next" onclick="handleNext()" class="w-full py-5 bg-slate-800 text-slate-600 rounded-full font-black text-[10px] tracking-[0.2em] transition-all disabled:opacity-50 uppercase shadow-lg" disabled>Continue</button>
                 </footer>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Gallery Section -->
-    <section id="gallery-section" class="py-20 bg-slate-900 px-6 border-b border-slate-800">
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-white mb-4 uppercase tracking-widest">Our Work</h2>
-                <div class="w-16 h-1 bg-amber-500 mx-auto"></div>
-            </div>
-            
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div class="md:col-span-2 md:row-span-2 overflow-hidden rounded-sm border border-slate-800 group">
-                    <img src="https://i.postimg.cc/WpKFzRDt/IMG_9373.jpg" class="w-full h-full object-cover aspect-square md:aspect-auto group-hover:scale-105 transition-transform duration-700" alt="Barber Studio">
-                </div>
-                <div class="overflow-hidden rounded-sm border border-slate-800 group">
-                    <img src="https://i.postimg.cc/vHV16P9b/IMG-9372.jpg" class="w-full h-full object-cover aspect-square group-hover:scale-105 transition-transform duration-700" alt="Haircut Detail">
-                </div>
-                <div class="overflow-hidden rounded-sm border border-slate-800 group">
-                    <img src="https://i.postimg.cc/kMZ6GrVB/IMG_9377.jpg" class="w-full h-full object-cover aspect-square group-hover:scale-105 transition-transform duration-700" alt="Haircut Detail">
-                </div>
-                <div class="overflow-hidden rounded-sm border border-slate-800 group">
-                    <img src="https://i.postimg.cc/DyXWbCsF/IMG_9378.jpg" class="w-full h-full object-cover aspect-square group-hover:scale-105 transition-transform duration-700" alt="Haircut Detail">
-                </div>
-                <div class="overflow-hidden rounded-sm border border-slate-800 group">
-                    <img src="https://i.postimg.cc/9XSR0340/IMG_9380.jpg" class="w-full h-full object-cover aspect-square group-hover:scale-105 transition-transform duration-700" alt="Haircut Detail">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Location & Info Section -->
-    <section id="info-section" class="py-24 px-6 bg-slate-950 border-t border-slate-900">
-        <div class="max-w-6xl mx-auto">
-            <div class="grid md:grid-cols-2 gap-12 items-start">
-                <div>
-                    <h2 class="text-3xl font-bold text-white mb-8 uppercase tracking-widest">Studio Information</h2>
-                    <div class="space-y-8">
-                        <div class="flex gap-4">
-                            <div class="w-12 h-12 bg-slate-900 border border-slate-800 rounded-sm flex items-center justify-center shrink-0">
-                                <i class="fa-solid fa-location-dot text-amber-500 text-xl"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-white font-bold uppercase tracking-wider mb-2">Location</h4>
-                                <p class="text-slate-400 leading-relaxed">Jl. Suweta, Ubud<br>Kec. Ubud, Kabupaten Gianyar<br>Bali 80571</p>
-                                <a href="https://maps.app.goo.gl/qQcP8g5yfYEfwouN8?g_st=ic" target="_blank" class="inline-flex items-center mt-3 text-amber-500 hover:text-amber-400 text-sm font-bold uppercase tracking-widest">Get Directions <i class="fa-solid fa-arrow-up-right-from-square ml-2 text-xs"></i></a>
-                            </div>
-                        </div>
-                        <div class="flex gap-4">
-                            <div class="w-12 h-12 bg-slate-900 border border-slate-800 rounded-sm flex items-center justify-center shrink-0">
-                                <i class="fa-regular fa-clock text-amber-500 text-xl"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-white font-bold uppercase tracking-wider mb-2">Opening Hours</h4>
-                                <p class="text-slate-400">Everyday: <strong class="text-white font-medium">11:00 - 20:00</strong></p>
-                            </div>
-                        </div>
-                        <div class="flex gap-4">
-                            <div class="w-12 h-12 bg-slate-900 border border-slate-800 rounded-sm flex items-center justify-center shrink-0">
-                                <i class="fa-solid fa-wallet text-amber-500 text-xl"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-white font-bold uppercase tracking-wider mb-2">Payment Methods</h4>
-                                <div class="flex flex-wrap gap-2 mt-2">
-                                    <span class="px-3 py-1 bg-slate-900 border border-slate-700 rounded-sm text-xs font-semibold text-slate-300">Cash</span>
-                                    <span class="px-3 py-1 bg-slate-900 border border-slate-700 rounded-sm text-xs font-semibold text-slate-300">Transfer Bank</span>
-                                    <span class="px-3 py-1 bg-slate-900 border border-slate-700 rounded-sm text-xs font-semibold text-slate-300">QRIS</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Map Box -->
-                <div class="bg-slate-900 p-2 rounded-sm border border-slate-800 h-[400px]">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3945.7441589139265!2d115.26359577587114!3d-8.49089169154942!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd23d706f36605b%3A0xeab5d50ceafed2f0!2sJl.%20Suweta%2C%20Ubud%2C%20Kecamatan%20Ubud%2C%20Kabupaten%20Gianyar%2C%20Bali%2080571!5e0!3m2!1sen!2sid!4v1700000000000!5m2!1sen!2sid" class="w-full h-full rounded-sm filter invert-[90%] hue-rotate-180 contrast-100 opacity-80" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-slate-950 border-t border-slate-900 py-16 px-6 text-center">
-        <img src="https://i.postimg.cc/hv8HkW60/7E38079E-E3EB-41A3-BB85-31A344F99CE1.png" alt="Pro Barber Logo" class="h-16 mx-auto mb-6 opacity-80 grayscale hover:grayscale-0 transition-all">
-        <div class="flex justify-center gap-6 mb-8">
-            <a href="https://instagram.com/probarbersolution" target="_blank" class="w-10 h-10 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-amber-500 hover:border-amber-500 transition-colors"><i class="fa-brands fa-instagram text-xl"></i></a>
-            <a href="https://wa.me/6288989994780" target="_blank" class="w-10 h-10 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-amber-500 hover:border-amber-500 transition-colors"><i class="fa-brands fa-whatsapp text-xl"></i></a>
+    <footer class="py-20 px-6 bg-slate-950 border-t border-slate-900 text-center">
+        <img src="https://i.postimg.cc/hv8HkW60/7E38079E-E3EB-41A3-BB85-31A344F99CE1.png" class="h-10 mx-auto mb-10 opacity-20 grayscale">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-5xl mx-auto text-left text-slate-500 mb-16">
+            <div>
+                <h4 class="text-amber-500 font-black text-[9px] uppercase tracking-widest mb-4">Location</h4>
+                <p class="text-xs">Available for Home & Private Service in Ubud & Across Bali Wide.</p>
+            </div>
+            <div>
+                <h4 class="text-amber-500 font-black text-[9px] uppercase tracking-widest mb-4">Contact</h4>
+                <p class="text-xs">WA: +62 889 8999 4780</p>
+                <p class="text-xs mt-1">IG: @probarbersolution</p>
+            </div>
+            <div>
+                <h4 class="text-amber-500 font-black text-[9px] uppercase tracking-widest mb-4">Operating</h4>
+                <p class="text-xs font-bold text-white">Daily: 11:00 AM - 08:00 PM</p>
+            </div>
         </div>
-        <p class="text-slate-500 uppercase tracking-widest text-sm mb-2">Pro Barber Bali Solution</p>
-        <p class="text-slate-600 text-xs">© 2026 All Rights Reserved.</p>
+        <p class="text-slate-800 text-[8px] font-black uppercase tracking-[0.4em] pt-10 border-t border-slate-900/50">PRO BARBER BALI SOLUTION • 2026</p>
     </footer>
 
-    <!-- ROBUST STATE MANAGEMENT SCRIPT -->
     <script>
-        const ADMIN_WHATSAPP = "6288989994780"; 
-        
-        const servicesData = [
-            { id: 1, name: "Men's Haircut", duration: "45 mins", price: 300000, desc: "Bespoke grooming. Includes consultation, precision cut, wash & style." },
-            { id: 2, name: "Complex Haircut & Beard", duration: "1h 15m", price: 400000, desc: "Flawless detailed cut combined with expert beard sculpting." },
-            { id: 3, name: "Father and Son", duration: "1h 30m", price: 500000, desc: "Premium grooming session for two. Look sharp together." }
-        ];
-        const timeSlots = ["11:00", "12:30", "14:00", "15:30", "17:00", "18:30"];
-        const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-        const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+        const WA_ADMIN = "6288989994780";
+        const SLOTS = ["11:00", "12:30", "14:00", "15:30", "17:00", "18:30", "19:30"];
+        const MON = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+        const DAY = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
-        // State Manager
-        const state = {
-            step: 1,
-            serviceId: null,
-            dateStr: null, // format: YYYY-MM-DD
-            timeStr: null
-        };
+        let res = { step: 1, sN: null, sP: null, d: null, t: null };
 
-        const formatPrice = (price) => new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(price);
-
-        // --- INITIALIZATION (Build DOM once) ---
-        function initApp() {
-            // 1. Build Services
-            const srvContainer = document.getElementById('services-list');
-            servicesData.forEach(srv => {
-                const el = document.createElement('div');
-                el.id = `srv-${srv.id}`;
-                el.className = `service-item flex justify-between items-center p-4 rounded-lg border border-slate-800 bg-slate-800/50 cursor-pointer transition-all hover:border-slate-600`;
-                el.innerHTML = `
-                    <div class="pr-4 flex-1">
-                        <h4 class="font-bold text-white text-sm mb-1">${srv.name}</h4>
-                        <p class="text-xs text-slate-400 mb-2">${srv.duration}</p>
-                        <p class="text-xs text-slate-500 leading-relaxed">${srv.desc}</p>
-                    </div>
-                    <div class="flex flex-col items-end justify-between h-full gap-4">
-                        <span class="font-bold text-amber-500 text-sm">${formatPrice(srv.price)}</span>
-                        <div class="w-6 h-6 rounded-full border-2 border-slate-600 custom-radio relative"></div>
-                    </div>
-                `;
-                el.onclick = () => selectService(srv.id);
-                srvContainer.appendChild(el);
+        function setS(id, n, p){ 
+            res.sN = n; res.sP = p;
+            document.querySelectorAll('.s-card').forEach((el, i) => {
+                const c = el.querySelector('.circle');
+                if(i+1 === id) { el.classList.add('border-amber-500', 'bg-amber-500/10'); c.classList.add('bg-amber-500', 'border-amber-500'); }
+                else { el.classList.remove('border-amber-500', 'bg-amber-500/10'); c.classList.remove('bg-amber-500', 'border-amber-500'); }
             });
+            uUI();
+        }
 
-            // 2. Build Dates (Next 14 Days)
-            const dateContainer = document.getElementById('date-list');
-            for (let i = 0; i < 14; i++) {
-                let d = new Date();
-                d.setDate(d.getDate() + i);
-                const dateKey = `${d.getFullYear()}-${d.getMonth()}-${d.getDate()}`;
-                
-                const el = document.createElement('div');
-                el.id = `date-${dateKey}`;
-                el.className = `date-item snap-start shrink-0 w-16 py-3 flex flex-col items-center justify-center rounded-lg border border-slate-700 bg-slate-800/50 cursor-pointer transition-colors hover:border-slate-500`;
-                el.innerHTML = `
-                    <span class="text-[10px] font-bold uppercase mb-1 text-slate-400 ds-day">${days[d.getDay()]}</span>
-                    <span class="text-lg font-bold text-white ds-num">${d.getDate()}</span>
-                    <span class="text-[10px] mt-0.5 text-slate-500 ds-month">${months[d.getMonth()]}</span>
-                `;
-                el.onclick = () => selectDate(dateKey);
-                dateContainer.appendChild(el);
+        function handleNext(){ 
+            if(res.step < 3) { res.step++; if(res.step === 2) buildCal(); uUI(); } 
+            else { goWA(); }
+        }
+
+        function handlePrev(){ if(res.step > 1) { res.step--; uUI(); } }
+
+        function buildCal(){
+            const l = document.getElementById('date-list'); if(l.innerHTML !== "") return;
+            for(let i=0; i<14; i++){
+                let dt = new Date(); dt.setDate(dt.getDate() + i);
+                let dn = DAY[dt.getDay()], dm = dt.getDate(), mn = MON[dt.getMonth()];
+                let f = `${dm} ${mn} ${dt.getFullYear()}`;
+                let el = document.createElement('div');
+                el.className = "flex-shrink-0 w-16 py-5 border border-slate-800 rounded-3xl text-center bg-slate-800/30 cursor-pointer transition-all";
+                el.innerHTML = `<span class="block text-[8px] font-black text-slate-500 uppercase mb-1">${dn}</span><span class="text-xl font-black text-white nm">${dm}</span>`;
+                el.onclick = function() {
+                    document.querySelectorAll('#date-list div').forEach(d => { d.classList.remove('border-amber-500', 'bg-amber-500/20'); d.querySelector('.nm').classList.replace('text-slate-950','text-white'); });
+                    this.classList.add('border-amber-500', 'bg-amber-500/20'); this.querySelector('.nm').classList.replace('text-white','text-slate-950');
+                    res.d = f; uUI();
+                };
+                l.appendChild(el);
             }
-
-            // 3. Build Times
-            const timeContainer = document.getElementById('time-list');
-            timeSlots.forEach(t => {
-                const el = document.createElement('div');
-                el.id = `time-${t}`;
-                el.className = `time-item py-3 rounded-lg border border-slate-700 bg-slate-800/50 text-sm font-bold text-center text-slate-300 cursor-pointer transition-colors hover:border-slate-500`;
-                el.innerText = t;
-                el.onclick = () => selectTime(t);
-                timeContainer.appendChild(el);
+            const tL = document.getElementById('time-list');
+            SLOTS.forEach(tm => {
+                let el = document.createElement('div');
+                el.className = "py-3 border border-slate-800 rounded-xl text-center bg-slate-800/30 text-[10px] font-black text-white cursor-pointer transition-all";
+                el.innerText = tm;
+                el.onclick = function() {
+                    document.querySelectorAll('#time-list div').forEach(t => t.classList.remove('bg-amber-500', 'text-slate-950', 'border-amber-500'));
+                    this.classList.add('bg-amber-500', 'text-slate-950', 'border-amber-500');
+                    res.t = tm; uUI();
+                };
+                tL.appendChild(el);
             });
-
-            updateUI();
         }
 
-        // --- ACTION HANDLERS ---
-        function selectService(id) {
-            state.serviceId = id;
-            updateUI();
-        }
-
-        function selectDate(dateKey) {
-            state.dateStr = dateKey;
-            state.timeStr = null; // Reset jam
-            updateUI();
-        }
-
-        function selectTime(timeStr) {
-            if(!state.dateStr) return; // Harus pilih tanggal dulu
-            state.timeStr = timeStr;
-            updateUI();
-        }
-
-        function nextStep() {
-            if (state.step === 1 && state.serviceId) {
-                state.step = 2;
-                updateUI();
-            } else if (state.step === 2 && state.dateStr && state.timeStr) {
-                state.step = 3;
-                updateUI();
-            } else if (state.step === 3) {
-                submitBooking();
+        function uUI(){
+            const btn = document.getElementById('btn-next'), bck = document.getElementById('btn-back'), tit = document.getElementById('step-title'), cnt = document.getElementById('step-count');
+            [1,2,3,4].forEach(i => { document.getElementById(`view-${i}`).style.transform = `translateX(${(i - res.step) * 100}%)`; });
+            if(res.step === 1){
+                tit.innerText = "Select Service"; cnt.innerText = "Langkah 1/3";
+                btn.disabled = !res.sN; if(res.sN) { btn.classList.add('bg-amber-500', 'text-slate-950'); }
+                bck.classList.add('hidden');
+            }
+            if(res.step === 2){
+                tit.innerText = "Schedule Info"; cnt.innerText = "Langkah 2/3";
+                bck.classList.remove('hidden'); btn.disabled = !(res.d && res.t); btn.innerText = "Continue";
+                btn.classList.toggle('bg-amber-500', res.d && res.t); btn.classList.toggle('text-slate-950', res.d && res.t);
+            }
+            if(res.step === 3){
+                tit.innerText = "Booking Details"; cnt.innerText = "Langkah 3/3";
+                document.getElementById('sum-s').innerText = res.sN + " (IDR " + res.sP + ")";
+                document.getElementById('sum-d').innerText = res.d + " • Time " + res.t;
+                btn.innerText = "REQUEST VIA WHATSAPP"; btn.classList.replace('bg-amber-500', 'bg-green-600'); btn.classList.add('text-white');
             }
         }
 
-        function prevStep() {
-            if (state.step > 1) {
-                state.step--;
-                updateUI();
-            }
+        function goWA(){
+            const n = document.getElementById('i-name').value.trim(), ph = document.getElementById('i-wa').value.trim(), m = document.getElementById('i-maps').value.trim(), v = document.getElementById('i-villa').value.trim(), a = document.getElementById('i-addr').value.trim(), nt = document.getElementById('i-note').value.trim();
+            if(!n || !ph || !m) return alert("Please fill Name, WhatsApp, and Google Maps Link.");
+            res.step = 4; uUI();
+            document.getElementById('btn-next').classList.add('hidden'); document.getElementById('btn-back').classList.add('hidden');
+            const msg = `Halo PRO BARBER BALI, saya ingin reservasi untuk Home Service:\n\n*Full Name:* ${n}\n*WhatsApp Number:* ${ph}\n*Google Maps Link:* ${m}\n*Villa / Hotel Name:* ${v}\n*Full Address:* ${a}\n\n*Service:* ${res.sN}\n*Schedule:* ${res.d} • ${res.t}\n\n*Request:* ${nt}\n\n_Booking is confirmed after WhatsApp approval._`;
+            setTimeout(() => window.location.href = `https://wa.me/${WA_ADMIN}?text=${encodeURIComponent(msg)}`, 1500);
         }
-
-        // --- DOM UPDATER (UI Engine) ---
-        function updateUI() {
-            // Update Service Styling
-            document.querySelectorAll('.service-item').forEach(el => {
-                if (el.id === `srv-${state.serviceId}`) {
-                    el.classList.add('service-active', 'border-amber-500', 'bg-amber-500/10');
-                    el.classList.remove('border-slate-800', 'bg-slate-800/50');
-                } else {
-                    el.classList.remove('service-active', 'border-amber-500', 'bg-amber-500/10');
-                    el.classList.add('border-slate-800', 'bg-slate-800/50');
-                }
-            });
-
-            // Update Date Styling
-            document.querySelectorAll('.date-item').forEach(el => {
-                if (el.id === `date-${state.dateStr}`) {
-                    el.classList.add('bg-amber-500', 'border-amber-500');
-                    el.classList.remove('bg-slate-800/50', 'border-slate-700');
-                    el.querySelector('.ds-day').classList.replace('text-slate-400', 'text-slate-900');
-                    el.querySelector('.ds-num').classList.replace('text-white', 'text-slate-950');
-                    el.querySelector('.ds-month').classList.replace('text-slate-500', 'text-slate-800');
-                } else {
-                    el.classList.remove('bg-amber-500', 'border-amber-500');
-                    el.classList.add('bg-slate-800/50', 'border-slate-700');
-                    el.querySelector('.ds-day').classList.replace('text-slate-900', 'text-slate-400');
-                    el.querySelector('.ds-num').classList.replace('text-slate-950', 'text-white');
-                    el.querySelector('.ds-month').classList.replace('text-slate-800', 'text-slate-500');
-                }
-            });
-
-            // Update Time Styling
-            document.querySelectorAll('.time-item').forEach(el => {
-                // Disable jika tanggal belum dipilih
-                if (!state.dateStr) {
-                    el.style.opacity = '0.3';
-                    el.style.pointerEvents = 'none';
-                    return;
-                }
-                el.style.opacity = '1';
-                el.style.pointerEvents = 'auto';
-
-                if (el.id === `time-${state.timeStr}`) {
-                    el.classList.add('bg-amber-500', 'text-slate-950', 'border-amber-500', 'shadow-lg', 'shadow-amber-500/20');
-                    el.classList.remove('bg-slate-800/50', 'text-slate-300', 'border-slate-700');
-                } else {
-                    el.classList.remove('bg-amber-500', 'text-slate-950', 'border-amber-500', 'shadow-lg', 'shadow-amber-500/20');
-                    el.classList.add('bg-slate-800/50', 'text-slate-300', 'border-slate-700');
-                }
-            });
-
-            // Update Data Summary Text
-            const selectedServiceObj = servicesData.find(s => s.id === state.serviceId);
-            if (selectedServiceObj) {
-                // Step 2 Header
-                document.getElementById('dt-service-name').innerText = selectedServiceObj.name;
-                document.getElementById('dt-service-duration').innerText = selectedServiceObj.duration;
-                document.getElementById('dt-service-price').innerText = formatPrice(selectedServiceObj.price);
-                // Step 3 Summary
-                document.getElementById('summary-service-name').innerText = selectedServiceObj.name;
-                document.getElementById('summary-final-price').innerText = formatPrice(selectedServiceObj.price);
-            }
-            if (state.dateStr && state.timeStr) {
-                const parts = state.dateStr.split('-');
-                const d = new Date(parts[0], parts[1], parts[2]);
-                const dateText = `${days[d.getDay()]}, ${d.getDate()} ${months[d.getMonth()]} ${d.getFullYear()}`;
-                document.getElementById('summary-date').innerText = dateText;
-                document.getElementById('summary-time').innerText = state.timeStr;
-            }
-
-            // Update Views Position (Slide Animation)
-            const views = [
-                document.getElementById('view-1'),
-                document.getElementById('view-2'),
-                document.getElementById('view-3'),
-                document.getElementById('view-4')
-            ];
-            
-            views.forEach((v, index) => {
-                const viewStep = index + 1;
-                if (viewStep < state.step) {
-                    v.style.transform = 'translateX(-100%)'; // Geser ke kiri
-                } else if (viewStep === state.step) {
-                    v.style.transform = 'translateX(0)'; // Tampil di tengah
-                } else {
-                    v.style.transform = 'translateX(100%)'; // Sembunyi di kanan
-                }
-            });
-
-            // Update Header & Bottom Bar
-            const btnBack = document.getElementById('btn-back');
-            const title = document.getElementById('header-title');
-            const btnAction = document.getElementById('btn-action');
-
-            if (state.step === 1) {
-                btnBack.classList.add('hidden');
-                title.innerText = "Select service";
-                
-                if (state.serviceId) {
-                    btnAction.disabled = false;
-                    btnAction.className = "w-full bg-amber-500 text-slate-950 py-3.5 rounded-lg font-bold text-sm tracking-wide hover:bg-amber-400 transition-all flex justify-between px-6 shadow-lg shadow-amber-500/20";
-                    btnAction.innerHTML = `<span>Continue</span> <span>${formatPrice(selectedServiceObj.price)}</span>`;
-                } else {
-                    btnAction.disabled = true;
-                    btnAction.className = "w-full bg-slate-800 text-slate-500 py-3.5 rounded-lg font-bold text-sm tracking-wide flex justify-center cursor-not-allowed";
-                    btnAction.innerHTML = "Select a service";
-                }
-            } 
-            else if (state.step === 2) {
-                btnBack.classList.remove('hidden');
-                title.innerText = "Select date & time";
-
-                if (state.dateStr && state.timeStr) {
-                    btnAction.disabled = false;
-                    btnAction.className = "w-full bg-amber-500 text-slate-950 py-3.5 rounded-lg font-bold text-sm tracking-wide hover:bg-amber-400 transition-all flex justify-center shadow-lg shadow-amber-500/20";
-                    btnAction.innerHTML = "Continue to details";
-                } else {
-                    btnAction.disabled = true;
-                    btnAction.className = "w-full bg-slate-800 text-slate-500 py-3.5 rounded-lg font-bold text-sm tracking-wide flex justify-center cursor-not-allowed";
-                    btnAction.innerHTML = "Select date & time";
-                }
-            }
-            else if (state.step === 3) {
-                btnBack.classList.remove('hidden');
-                title.innerText = "Confirm details";
-                
-                btnAction.disabled = false;
-                btnAction.className = "w-full bg-[#25D366] text-white py-4 rounded-lg font-bold text-sm tracking-wide hover:bg-[#128C7E] transition-all flex justify-center items-center gap-2 shadow-lg shadow-[#25D366]/20";
-                btnAction.innerHTML = `<i class="fa-brands fa-whatsapp text-xl"></i> Confirm Booking`;
-            }
-        }
-
-        // --- WHATSAPP SUBMIT ---
-        function submitBooking() {
-            const name = document.getElementById('input-name').value;
-            const phone = document.getElementById('input-phone').value;
-            const notes = document.getElementById('input-notes').value;
-            
-            if(!name || !phone) {
-                alert("Please enter your Full Name and WhatsApp Number.");
-                document.getElementById('input-name').focus();
-                return;
-            }
-
-            // Tampilkan Layar Sukses (Step 4)
-            state.step = 4;
-            updateUI();
-            document.getElementById('bottom-bar').classList.add('hidden');
-            document.querySelector('header').classList.add('hidden');
-
-            const parts = state.dateStr.split('-');
-            const d = new Date(parts[0], parts[1], parts[2]);
-            const dateStrFormatted = `${d.getDate()} ${months[d.getMonth()]} ${d.getFullYear()}`;
-            const srv = servicesData.find(s => s.id === state.serviceId);
-            
-            const msg = `Halo Pro Barber Bali, saya ingin reservasi:\n\n` +
-                        `*Nama:* ${name}\n` +
-                        `*No. WA:* ${phone}\n` +
-                        `*Layanan:* ${srv.name} (${formatPrice(srv.price)})\n` +
-                        `*Tanggal:* ${dateStrFormatted}\n` +
-                        `*Jam:* ${state.timeStr}\n` +
-                        `${notes ? `*Catatan:* ${notes}\n` : ''}\n` +
-                        `Saya akan hadir di lokasi sesuai jadwal.`;
-
-            // MEMBUKA WHATSAPP
-            const waUrl = `https://wa.me/${ADMIN_WHATSAPP}?text=${encodeURIComponent(msg)}`;
-            setTimeout(() => { window.location.href = waUrl; }, 1000);
-        }
-
-        // Jalankan inisialisasi saat website dibuka
-        window.onload = initApp;
-
     </script>
 </body>
 </html>
-
 
