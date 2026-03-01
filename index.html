@@ -1,11 +1,15 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>PRO BARBER BALI | Premium Home Service & Private Grooming</title>
     
-    <!-- Tailwind CSS -->
+    <!-- Tag Meta SEO untuk ranking lokal di Ubud -->
+    <title>PRO BARBER BALI | #1 Premium Home Service Barber in Ubud</title>
+    <meta name="description" content="Premium Home Service Barber in Ubud. We deliver a 5-star luxury barber experience directly to your villa, hotel, or private residence across Bali.">
+    <meta name="keywords" content="home service barber ubud, barber villa ubud, haircut ubud bali, private barber bali, home service haircut ubud">
+    
+    <!-- Framework CSS Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -23,11 +27,12 @@
         }
     </script>
     
-    <!-- Icons & Fonts -->
+    <!-- Font dan Ikon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
     
     <style>
+        /* Pengaturan scrollbar dan transisi */
         .no-scrollbar::-webkit-scrollbar { display: none; }
         html { scroll-behavior: smooth; }
         .bg-hero {
@@ -52,9 +57,6 @@
             outline: none;
             box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.2);
         }
-        .img-card:hover img {
-            transform: scale(1.1);
-        }
     </style>
 </head>
 <body class="bg-slate-950 text-slate-200 antialiased selection:bg-amber-500 selection:text-slate-950">
@@ -65,215 +67,250 @@
             <img src="https://i.postimg.cc/hv8HkW60/7E38079E-E3EB-41A3-BB85-31A344F99CE1.png" alt="Pro Barber Logo" class="h-10 w-auto">
         </div>
         <div class="hidden lg:flex gap-8 text-[10px] font-black uppercase tracking-[0.3em]">
-            <a href="#gallery" class="hover:text-amber-500 transition-colors">Gallery</a>
+            <a href="#reviews" class="hover:text-amber-500 transition-colors">Reviews</a>
+            <a href="#gallery" class="hover:text-amber-500 transition-colors">Portfolio</a>
             <a href="#pricelist" class="hover:text-amber-500 transition-colors">Prices</a>
-            <a href="#booking" class="hover:text-amber-500 transition-colors">Booking</a>
         </div>
-        <a href="#booking" class="bg-amber-500 text-slate-950 px-6 py-2.5 rounded-full text-xs font-black uppercase tracking-widest hover:scale-105 active:scale-95 transition-all">RESERVE</a>
+        <a href="#booking" class="bg-amber-500 text-slate-950 px-6 py-2.5 rounded-full text-xs font-black uppercase tracking-widest hover:scale-105 active:scale-95 transition-all shadow-lg shadow-amber-500/20">RESERVE</a>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Bagian Hero -->
     <section class="relative pt-32 pb-24 px-6 flex items-center justify-center min-h-screen bg-hero">
         <div class="absolute inset-0 bg-gradient-to-b from-slate-950/70 via-slate-950/80 to-slate-950"></div>
         <div class="max-w-4xl mx-auto text-center relative z-10">
             <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900/80 border border-slate-700 mb-8">
-                <span class="text-[10px] uppercase tracking-[0.4em] text-amber-500 font-extrabold">Exclusive Home Barber Service</span>
+                <span class="text-[10px] uppercase tracking-[0.4em] text-amber-500 font-extrabold"><i class="fa-solid fa-house-laptop mr-2"></i> Premium Home Service Only</span>
             </div>
-            <h1 class="text-5xl md:text-8xl font-extrabold text-white mb-8 leading-[1.1] tracking-tighter">Private Grooming <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-600">At Your Location.</span></h1>
-            <p class="text-slate-300 mb-12 max-w-2xl mx-auto text-base md:text-xl leading-relaxed font-medium italic">"Designed for gentlemen who value precision, comfort, and privacy."</p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="#booking" class="bg-amber-500 text-slate-950 px-10 py-5 rounded-full font-black uppercase tracking-widest shadow-2xl shadow-amber-500/20 hover:bg-amber-400 transition-all text-sm">Book Session</a>
-                <a href="#gallery" class="bg-slate-900/50 border border-slate-700 text-white px-10 py-5 rounded-full font-black uppercase tracking-widest hover:bg-slate-800 transition-all text-sm">View Work</a>
+            <h1 class="text-5xl md:text-8xl font-extrabold text-white mb-8 leading-[1.1] tracking-tighter">Premium Barber <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-600">Comes To Your Villa.</span></h1>
+            <p class="text-slate-300 mb-10 max-w-2xl mx-auto text-base md:text-xl leading-relaxed font-medium">Ubud's elite mobile barber. We deliver a precision grooming experience directly to your villa, hotel, or private residence.</p>
+            
+            <div class="flex flex-col items-center gap-4">
+                <a href="#booking" class="bg-amber-500 text-slate-950 px-10 py-5 rounded-full font-black uppercase tracking-widest shadow-2xl shadow-amber-500/20 hover:bg-amber-400 transition-all text-sm">Reserve Your Session</a>
+                <p class="text-[10px] font-bold text-slate-500 uppercase tracking-[0.2em]">Limited daily availability. Advance booking recommended.</p>
             </div>
         </div>
     </section>
 
-    <!-- Gallery / Signature Looks -->
-    <section id="gallery" class="py-24 px-6 bg-slate-950">
+    <!-- Barisan Kepercayaan -->
+    <div class="bg-amber-500 text-slate-950 py-6 overflow-hidden border-y border-amber-600">
+        <div class="max-w-7xl mx-auto px-6 flex flex-wrap justify-center gap-x-12 gap-y-4 text-[10px] font-black uppercase tracking-[0.2em]">
+            <span class="flex items-center gap-2"><i class="fa-solid fa-star"></i> 5-Star Experience</span>
+            <span class="flex items-center gap-2"><i class="fa-solid fa-shield-check"></i> Trusted by Ubud Expats</span>
+            <span class="flex items-center gap-2"><i class="fa-solid fa-spray-can-sparkles"></i> Hygiene Guaranteed</span>
+            <span class="flex items-center gap-2"><i class="fa-solid fa-clock"></i> On-Time Arrival</span>
+        </div>
+    </div>
+
+    <!-- Bagian Ulasan Pelanggan -->
+    <section id="reviews" class="py-24 px-6 bg-slate-950">
+        <div class="max-w-6xl mx-auto text-center">
+            <div class="mb-16">
+                <!-- Baris Rating Google -->
+                <p class="text-amber-500/80 text-[10px] font-bold uppercase tracking-[0.3em] mb-4">Rated 5.0 by international clients in Ubud.</p>
+                <h2 class="text-3xl md:text-5xl font-extrabold text-white uppercase tracking-tighter">Client Reviews</h2>
+                <div class="w-16 h-1 bg-amber-500 mx-auto mt-6"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-left">
+                <!-- Ulasan 1 -->
+                <div class="bg-slate-900/40 border border-slate-800 p-8 rounded-[2.5rem] flex flex-col">
+                    <div class="flex gap-1 text-amber-500 mb-4 text-xs">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-slate-300 text-sm leading-relaxed mb-6 italic">"Best haircut I had in Bali. Super professional and on time."</p>
+                    <div class="mt-auto flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-[10px] font-bold text-slate-400">D</div>
+                        <div>
+                            <p class="text-white font-bold text-xs">Daniel</p>
+                            <p class="text-slate-500 text-[9px] uppercase tracking-widest">Australia</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Ulasan 2 -->
+                <div class="bg-slate-900/40 border border-slate-800 p-8 rounded-[2.5rem] flex flex-col">
+                    <div class="flex gap-1 text-amber-500 mb-4 text-xs">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-slate-300 text-sm leading-relaxed mb-6 italic">"Very convenient for our villa stay. Clean tools and great fade."</p>
+                    <div class="mt-auto flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-[10px] font-bold text-slate-400">M</div>
+                        <div>
+                            <p class="text-white font-bold text-xs">Marcus</p>
+                            <p class="text-slate-500 text-[9px] uppercase tracking-widest">Germany</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Ulasan 3 -->
+                <div class="bg-slate-900/40 border border-slate-800 p-8 rounded-[2.5rem] flex flex-col">
+                    <div class="flex gap-1 text-amber-500 mb-4 text-xs">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-slate-300 text-sm leading-relaxed mb-6 italic">"Finally found a proper barber in Ubud who comes to the hotel."</p>
+                    <div class="mt-auto flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-[10px] font-bold text-slate-400">L</div>
+                        <div>
+                            <p class="text-white font-bold text-xs">Liam</p>
+                            <p class="text-slate-500 text-[9px] uppercase tracking-widest">UK</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Ulasan 4 -->
+                <div class="bg-slate-900/40 border border-slate-800 p-8 rounded-[2.5rem] flex flex-col">
+                    <div class="flex gap-1 text-amber-500 mb-4 text-xs">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-slate-300 text-sm leading-relaxed mb-6 italic">"Excellent service. Booking was easy and barber arrived exactly on schedule."</p>
+                    <div class="mt-auto flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-[10px] font-bold text-slate-400">R</div>
+                        <div>
+                            <p class="text-white font-bold text-xs">Ryan</p>
+                            <p class="text-slate-500 text-[9px] uppercase tracking-widest">Singapore</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Ulasan 5 -->
+                <div class="bg-slate-900/40 border border-slate-800 p-8 rounded-[2.5rem] flex flex-col lg:col-span-2 text-center lg:text-left">
+                    <div class="flex justify-center lg:justify-start gap-1 text-amber-500 mb-4 text-xs">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-slate-300 text-sm leading-relaxed mb-6 italic">"Premium experience without leaving the villa. Highly recommended for travelers in Ubud area."</p>
+                    <div class="mt-auto flex justify-center lg:justify-start items-center gap-3">
+                        <div class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-[10px] font-bold text-slate-400">J</div>
+                        <div>
+                            <p class="text-white font-bold text-xs">James</p>
+                            <p class="text-slate-500 text-[9px] uppercase tracking-widest">USA</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bagian Portofolio Gambar -->
+    <section id="gallery" class="py-24 px-6 bg-slate-900/20">
         <div class="max-w-6xl mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-amber-500 text-[10px] font-black uppercase tracking-[0.5em] mb-4">The Portfolio</h2>
+                <h2 class="text-amber-500 text-[10px] font-black uppercase tracking-[0.5em] mb-4">Portfolio</h2>
                 <h3 class="text-3xl md:text-5xl font-extrabold text-white uppercase tracking-tighter">Signature Looks</h3>
                 <div class="w-16 h-1 bg-amber-500 mx-auto mt-6"></div>
             </div>
 
             <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
-                <!-- Foto 1 -->
-                <div class="relative overflow-hidden rounded-[2rem] aspect-[4/5] bg-slate-900 img-card group">
-                    <img src="https://i.postimg.cc/vHV16P9b/IMG-9372.jpg" alt="Hasil Potongan 1" class="w-full h-full object-cover transition-transform duration-700">
-                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
-                        <p class="text-[10px] font-black uppercase tracking-widest text-amber-500">Precision Fade</p>
-                    </div>
+                <div class="relative overflow-hidden rounded-[2rem] aspect-[4/5] bg-slate-900 group">
+                    <img src="https://i.postimg.cc/vHV16P9b/IMG-9372.jpg" alt="Potongan Rambut Ubud" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                 </div>
-                <!-- Foto 2 -->
-                <div class="relative overflow-hidden rounded-[2rem] aspect-[4/5] bg-slate-900 img-card group md:mt-8">
-                    <img src="https://i.postimg.cc/kMZ6GrVB/IMG_9377.jpg" alt="Hasil Potongan 2" class="w-full h-full object-cover transition-transform duration-700">
-                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
-                        <p class="text-[10px] font-black uppercase tracking-widest text-amber-500">Beard Contouring</p>
-                    </div>
+                <div class="relative overflow-hidden rounded-[2rem] aspect-[4/5] bg-slate-900 group md:mt-8">
+                    <img src="https://i.postimg.cc/kMZ6GrVB/IMG_9377.jpg" alt="Bali Beard Sculpting" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                 </div>
-                <!-- Foto 3 -->
-                <div class="relative overflow-hidden rounded-[2rem] aspect-[4/5] bg-slate-900 img-card group">
-                    <img src="https://i.postimg.cc/DyXWbCsF/IMG_9378.jpg" alt="Hasil Potongan 3" class="w-full h-full object-cover transition-transform duration-700">
-                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
-                        <p class="text-[10px] font-black uppercase tracking-widest text-amber-500">Modern Taper</p>
-                    </div>
+                <div class="relative overflow-hidden rounded-[2rem] aspect-[4/5] bg-slate-900 group">
+                    <img src="https://i.postimg.cc/DyXWbCsF/IMG_9378.jpg" alt="Layanan Barber Villa" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                 </div>
-                <!-- Foto 4 -->
-                <div class="relative overflow-hidden rounded-[2rem] aspect-[4/5] bg-slate-900 img-card group md:mt-8">
-                    <img src="https://i.postimg.cc/9XSR0340/IMG_9380.jpg" alt="Hasil Potongan 4" class="w-full h-full object-cover transition-transform duration-700">
-                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
-                        <p class="text-[10px] font-black uppercase tracking-widest text-amber-500">Clean Finish</p>
-                    </div>
+                <div class="relative overflow-hidden rounded-[2rem] aspect-[4/5] bg-slate-900 group md:mt-8">
+                    <img src="https://i.postimg.cc/9XSR0340/IMG_9380.jpg" alt="Grooming Premium" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                 </div>
-            </div>
-            
-            <div class="mt-20 p-10 bg-slate-900/30 rounded-[3rem] border border-slate-800 text-center">
-                <p class="text-slate-400 text-sm leading-relaxed max-w-2xl mx-auto">Kami mengkhususkan diri dalam potongan rambut modern, penataan jenggot klasik, dan ritual grooming VIP yang dibawa langsung ke kenyamanan villa Anda.</p>
             </div>
         </div>
     </section>
 
-    <!-- Pricelist Section -->
-    <section id="pricelist" class="py-24 px-6 bg-slate-900/20 border-y border-slate-900">
+    <!-- Daftar Harga -->
+    <section id="pricelist" class="py-24 px-6 bg-slate-950 border-y border-slate-900">
         <div class="max-w-6xl mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-5xl font-extrabold text-white uppercase tracking-tighter">Price List</h2>
+                <h2 class="text-3xl md:text-5xl font-extrabold text-white uppercase tracking-tighter">Pricelist</h2>
                 <div class="w-16 h-1 bg-amber-500 mx-auto mt-6"></div>
             </div>
             
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-                <!-- Srv 1 -->
+                <!-- Layanan 1 -->
                 <div class="bg-slate-900/60 border border-slate-800 p-8 rounded-[2.5rem] flex flex-col hover:border-amber-500/30 transition-all">
-                    <div class="flex justify-between items-start mb-6">
-                        <i class="fa-solid fa-scissors text-amber-500 text-2xl"></i>
-                        <span class="text-[9px] font-black text-slate-500 uppercase tracking-widest">60 Mins</span>
-                    </div>
-                    <h3 class="text-white font-extrabold text-lg mb-2">Men’s Haircut</h3>
-                    <p class="text-slate-400 text-xs mb-8 leading-relaxed">Tailored precision cut designed to complement your personal style. Includes refined styling finish.</p>
+                    <div class="flex justify-between items-start mb-6"><i class="fa-solid fa-scissors text-amber-500 text-2xl"></i><span class="text-[9px] font-black text-slate-500 uppercase tracking-widest">60 Mins</span></div>
+                    <h3 class="text-white font-extrabold text-lg mb-2 uppercase">Men’s Haircut</h3>
+                    <p class="text-slate-400 text-xs mb-8 leading-relaxed">Tailored precision cut at your private villa. Includes styling finish.</p>
                     <div class="mt-auto font-black text-amber-500 text-xl tracking-tight">IDR 300,000</div>
                 </div>
-                <!-- Srv 2 -->
+                <!-- Layanan 2 -->
                 <div class="bg-slate-900/60 border border-slate-800 p-8 rounded-[2.5rem] flex flex-col hover:border-amber-500/30 transition-all">
-                    <div class="flex justify-between items-start mb-6">
-                        <i class="fa-solid fa-ghost text-amber-500 text-2xl"></i>
-                        <span class="text-[9px] font-black text-slate-500 uppercase tracking-widest">45-60 Mins</span>
-                    </div>
-                    <h3 class="text-white font-extrabold text-lg mb-2">Bald / Clean Shave</h3>
-                    <p class="text-slate-400 text-xs mb-8 leading-relaxed">Achieve a smooth, sharp bald finish with detailed razor work and scalp refinement.</p>
+                    <div class="flex justify-between items-start mb-6"><i class="fa-solid fa-ghost text-amber-500 text-2xl"></i><span class="text-[9px] font-black text-slate-500 uppercase tracking-widest">60 Mins</span></div>
+                    <h3 class="text-white font-extrabold text-lg mb-2 uppercase">Bald / Clean Shave</h3>
+                    <p class="text-slate-400 text-xs mb-8 leading-relaxed">Smooth bald finish with scalp refinement for a polished appearance.</p>
                     <div class="mt-auto font-black text-amber-500 text-xl tracking-tight">IDR 300,000</div>
                 </div>
-                <!-- Srv 3 -->
-                <div class="bg-slate-900/60 border border-amber-500/50 p-8 rounded-[2.5rem] flex flex-col shadow-2xl shadow-amber-500/5 relative overflow-hidden">
-                    <div class="absolute top-0 right-0 bg-amber-500 text-slate-950 text-[8px] font-black px-4 py-1.5 uppercase tracking-widest">Recommended</div>
-                    <div class="flex justify-between items-start mb-6">
-                        <i class="fa-solid fa-user-check text-amber-500 text-2xl"></i>
-                        <span class="text-[9px] font-black text-slate-500 uppercase tracking-widest">75 Mins</span>
-                    </div>
-                    <h3 class="text-white font-extrabold text-lg mb-2">Haircut & Beard</h3>
-                    <p class="text-slate-400 text-xs mb-8 leading-relaxed">A complete session combining precision haircut and meticulous beard contouring.</p>
+                <!-- Layanan 3 -->
+                <div class="bg-slate-900/60 border border-amber-500/50 p-8 rounded-[2.5rem] flex flex-col shadow-2xl relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-amber-500 text-slate-950 text-[8px] font-black px-4 py-1.5 uppercase tracking-widest">Most Popular</div>
+                    <div class="flex justify-between items-start mb-6"><i class="fa-solid fa-user-check text-amber-500 text-2xl"></i><span class="text-[9px] font-black text-slate-500 uppercase tracking-widest">75 Mins</span></div>
+                    <h3 class="text-white font-extrabold text-lg mb-2 uppercase">Haircut & Beard</h3>
+                    <p class="text-slate-400 text-xs mb-8 leading-relaxed">Full session combining haircut and meticulous beard contouring.</p>
                     <div class="mt-auto font-black text-amber-500 text-xl tracking-tight">IDR 450,000</div>
                 </div>
-                <!-- Srv 4 -->
+                <!-- Layanan 4 -->
                 <div class="bg-slate-950 border border-amber-500 p-8 rounded-[2.5rem] flex flex-col">
-                    <div class="flex justify-between items-start mb-6">
-                        <i class="fa-solid fa-crown text-amber-500 text-2xl"></i>
-                        <span class="text-[9px] font-black text-slate-500 uppercase tracking-widest">90 Mins</span>
-                    </div>
-                    <h3 class="text-white font-extrabold text-lg mb-2">VIP Experience</h3>
-                    <p class="text-slate-400 text-xs mb-8 leading-relaxed">Full ritual: Cut, beard sculpting, nose & ear waxing, and premium styling finish.</p>
+                    <div class="flex justify-between items-start mb-6"><i class="fa-solid fa-crown text-amber-500 text-2xl"></i><span class="text-[9px] font-black text-slate-500 uppercase tracking-widest">90 Mins</span></div>
+                    <h3 class="text-white font-extrabold text-lg mb-2 uppercase">VIP Experience</h3>
+                    <p class="text-slate-400 text-xs mb-8 leading-relaxed">The full ritual: Cut, beard, nose & ear wax, and premium finish.</p>
                     <div class="mt-auto font-black text-amber-500 text-xl tracking-tight">IDR 600,000</div>
                 </div>
-                <!-- Srv 5 -->
+                <!-- Layanan 5 -->
                 <div class="bg-slate-900/60 border border-slate-800 p-8 rounded-[2.5rem] flex flex-col lg:col-span-2">
-                    <div class="flex justify-between items-start mb-6">
-                        <i class="fa-solid fa-people-group text-amber-500 text-2xl"></i>
-                        <span class="text-[9px] font-black text-slate-500 uppercase tracking-widest">90 Mins</span>
-                    </div>
-                    <h3 class="text-white font-extrabold text-lg mb-2">Father & Son Experience</h3>
-                    <p class="text-slate-400 text-xs mb-8 leading-relaxed">Two precision haircuts delivered in your private space. (Son under 15).</p>
+                    <div class="flex justify-between items-start mb-6"><i class="fa-solid fa-people-group text-amber-500 text-2xl"></i><span class="text-[9px] font-black text-slate-500 uppercase tracking-widest">90 Mins</span></div>
+                    <h3 class="text-white font-extrabold text-lg mb-2 uppercase">Father & Son</h3>
+                    <p class="text-slate-400 text-xs mb-8 leading-relaxed">Two precision haircuts delivered in your private space (Son <15).</p>
                     <div class="mt-auto font-black text-amber-500 text-xl tracking-tight">IDR 550,000</div>
                 </div>
             </div>
 
-            <!-- Optional Enhancements -->
+            <!-- Bagian Biaya Tambahan -->
             <div class="bg-slate-900/30 border border-slate-800 p-10 rounded-[3rem]">
-                <h4 class="text-white font-black text-sm uppercase tracking-widest mb-8 flex items-center gap-3">
-                    <span class="w-6 h-6 rounded-full bg-amber-500 flex items-center justify-center text-slate-950 text-[10px]">✨</span> 
-                    Optional Enhancements
-                </h4>
-                <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
-                    <div>
-                        <span class="text-[8px] font-black text-slate-600 uppercase block mb-1">Long Hair</span>
-                        <span class="text-white font-bold text-xs uppercase">Scissor Cut Only</span>
-                        <p class="text-amber-500 font-black text-xs mt-1">+IDR 100k</p>
-                    </div>
-                    <div>
-                        <span class="text-[8px] font-black text-slate-600 uppercase block mb-1">Gray Camo</span>
-                        <span class="text-white font-bold text-xs uppercase">Coverage</span>
-                        <p class="text-amber-500 font-black text-xs mt-1">+IDR 150k</p>
-                    </div>
-                    <div>
-                        <span class="text-[8px] font-black text-slate-600 uppercase block mb-1">Early Morning</span>
-                        <span class="text-white font-bold text-xs uppercase">Before 09:00 AM</span>
-                        <p class="text-amber-500 font-black text-xs mt-1">+IDR 100k</p>
-                    </div>
-                    <div>
-                        <span class="text-[8px] font-black text-slate-600 uppercase block mb-1">Outside Ubud</span>
-                        <span class="text-white font-bold text-xs uppercase">Travel Fee</span>
-                        <p class="text-amber-500 font-black text-xs mt-1">100k–200k</p>
-                    </div>
+                <h4 class="text-white font-black text-sm uppercase tracking-widest mb-8 flex items-center gap-3">✨ Extras</h4>
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center md:text-left">
+                    <div><span class="text-[8px] font-black text-slate-600 uppercase block mb-1">Long Hair</span><span class="text-white font-bold text-xs uppercase">Scissor Cut</span><p class="text-amber-500 font-black text-xs mt-1">+100k</p></div>
+                    <div><span class="text-[8px] font-black text-slate-600 uppercase block mb-1">Gray Camo</span><span class="text-white font-bold text-xs uppercase">Coverage</span><p class="text-amber-500 font-black text-xs mt-1">+150k</p></div>
+                    <div><span class="text-[8px] font-black text-slate-600 uppercase block mb-1">Early Bird</span><span class="text-white font-bold text-xs uppercase">Before 9AM</span><p class="text-amber-500 font-black text-xs mt-1">+100k</p></div>
+                    <!-- Detail Biaya Transportasi yang Diperbarui -->
+                    <div><span class="text-[8px] font-black text-slate-600 uppercase block mb-1">Travel Fee</span><span class="text-white font-bold text-xs uppercase">Outside Ubud</span><p class="text-amber-500 font-black text-xs mt-1">100K–200K depending on distance</p></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Booking Widget -->
+    <!-- Widget Reservasi Utama -->
     <section id="booking" class="py-24 px-6 bg-slate-950">
         <div class="max-w-md mx-auto">
-            <div class="text-center mb-10">
-                <h2 class="text-3xl font-black text-white uppercase tracking-tighter">Reservation</h2>
-                <p class="text-slate-500 text-sm mt-4 font-medium uppercase tracking-widest text-[10px]">Private Home Service Only</p>
-            </div>
-
-            <div class="h-[780px] bg-slate-900 border border-slate-800 rounded-[3rem] shadow-2xl relative overflow-hidden flex flex-col">
+            <div class="h-[780px] bg-slate-900 border border-slate-800 rounded-[3.5rem] shadow-2xl relative overflow-hidden flex flex-col">
                 <header class="p-6 border-b border-slate-800 flex items-center justify-between bg-slate-900/50">
-                    <div class="flex items-center gap-4">
-                        <img src="https://i.postimg.cc/hv8HkW60/7E38079E-E3EB-41A3-BB85-31A344F99CE1.png" class="h-6">
-                        <div>
-                            <h3 id="step-title" class="font-extrabold text-white text-[10px] uppercase tracking-widest">Select Service</h3>
-                            <p id="step-count" class="text-[9px] text-slate-500 mt-0.5 uppercase">Langkah 1/3</p>
-                        </div>
+                    <img src="https://i.postimg.cc/hv8HkW60/7E38079E-E3EB-41A3-BB85-31A344F99CE1.png" class="h-6">
+                    <div class="text-right">
+                        <h3 id="step-title" class="font-extrabold text-white text-[10px] uppercase tracking-widest">Select Service</h3>
+                        <p id="step-count" class="text-[8px] text-slate-500 uppercase">Step 1/3</p>
                     </div>
-                    <button id="btn-back" onclick="handlePrev()" class="hidden text-slate-500 hover:text-white transition-colors text-[10px] font-black uppercase">Back</button>
                 </header>
 
                 <div class="flex-1 relative overflow-hidden">
-                    <!-- Step 1 -->
-                    <div id="view-1" class="app-view p-6 space-y-2.5 overflow-y-auto no-scrollbar" style="transform: translateX(0);">
-                        <div onclick="setS(1, 'Men\'s Haircut', '300,000')" class="s-card border border-slate-800 p-4 rounded-2xl bg-slate-800/30 flex justify-between items-center cursor-pointer transition-all">
-                            <div><h4 class="font-bold text-white text-[11px] uppercase">Men's Haircut</h4><p class="text-[9px] text-slate-500">IDR 300k</p></div>
+                    <!-- Langkah 1: Pilihan Layanan -->
+                    <div id="view-1" class="app-view p-6 space-y-3 overflow-y-auto no-scrollbar" style="transform: translateX(0);">
+                        <div onclick="setS(1, 'Men\'s Haircut', '300,000')" class="s-card border border-slate-800 p-5 rounded-3xl bg-slate-800/30 flex justify-between items-center cursor-pointer transition-all">
+                            <div><h4 class="font-bold text-white text-[11px] uppercase">Haircut</h4><p class="text-[9px] text-slate-500">300k</p></div>
                             <div class="w-4 h-4 rounded-full border border-slate-700 circle"></div>
                         </div>
-                        <div onclick="setS(2, 'Bald / Clean Shave', '300,000')" class="s-card border border-slate-800 p-4 rounded-2xl bg-slate-800/30 flex justify-between items-center cursor-pointer transition-all">
-                            <div><h4 class="font-bold text-white text-[11px] uppercase">Bald / Clean Shave</h4><p class="text-[9px] text-slate-500">IDR 300k</p></div>
+                        <div onclick="setS(2, 'Bald Shave', '300,000')" class="s-card border border-slate-800 p-5 rounded-3xl bg-slate-800/30 flex justify-between items-center cursor-pointer transition-all">
+                            <div><h4 class="font-bold text-white text-[11px] uppercase">Bald Shave</h4><p class="text-[9px] text-slate-500">300k</p></div>
                             <div class="w-4 h-4 rounded-full border border-slate-700 circle"></div>
                         </div>
-                        <div onclick="setS(3, 'Haircut & Beard Grooming', '450,000')" class="s-card border border-slate-800 p-4 rounded-2xl bg-slate-800/30 flex justify-between items-center cursor-pointer transition-all">
-                            <div><h4 class="font-bold text-white text-[11px] uppercase">Haircut & Beard</h4><p class="text-[9px] text-slate-500">IDR 450k</p></div>
+                        <div onclick="setS(3, 'Haircut & Beard', '450,000')" class="s-card border border-slate-800 p-5 rounded-3xl bg-slate-800/30 flex justify-between items-center cursor-pointer transition-all">
+                            <div><h4 class="font-bold text-white text-[11px] uppercase">Cut & Beard</h4><p class="text-[9px] text-slate-500">450k</p></div>
                             <div class="w-4 h-4 rounded-full border border-slate-700 circle"></div>
                         </div>
-                        <div onclick="setS(4, 'VIP Grooming Experience', '600,000')" class="s-card border border-slate-800 p-4 rounded-2xl bg-slate-800/30 flex justify-between items-center cursor-pointer transition-all">
-                            <div><h4 class="font-bold text-white text-[11px] uppercase">VIP Experience</h4><p class="text-[9px] text-slate-500">IDR 600k</p></div>
+                        <div onclick="setS(4, 'VIP Experience', '600,000')" class="s-card border border-slate-800 p-5 rounded-3xl bg-slate-800/30 flex justify-between items-center cursor-pointer transition-all">
+                            <div><h4 class="font-bold text-white text-[11px] uppercase">VIP Ritual</h4><p class="text-[9px] text-slate-500">600k</p></div>
                             <div class="w-4 h-4 rounded-full border border-slate-700 circle"></div>
                         </div>
-                        <div onclick="setS(5, 'Father & Son Experience', '550,000')" class="s-card border border-slate-800 p-4 rounded-2xl bg-slate-800/30 flex justify-between items-center cursor-pointer transition-all">
-                            <div><h4 class="font-bold text-white text-[11px] uppercase">Father & Son</h4><p class="text-[9px] text-slate-500">IDR 550k</p></div>
+                        <div onclick="setS(5, 'Father & Son', '550,000')" class="s-card border border-slate-800 p-5 rounded-3xl bg-slate-800/30 flex justify-between items-center cursor-pointer transition-all">
+                            <div><h4 class="font-bold text-white text-[11px] uppercase">Father & Son</h4><p class="text-[9px] text-slate-500">550k</p></div>
                             <div class="w-4 h-4 rounded-full border border-slate-700 circle"></div>
                         </div>
                     </div>
 
-                    <!-- Step 2 -->
+                    <!-- Langkah 2: Pilihan Jadwal -->
                     <div id="view-2" class="app-view p-6 space-y-6" style="transform: translateX(100%);">
                         <div>
                             <p class="text-[9px] font-black text-slate-600 uppercase mb-3 tracking-widest">Select Date</p>
@@ -285,60 +322,60 @@
                         </div>
                     </div>
 
-                    <!-- Step 3 -->
+                    <!-- Langkah 3: Detail Lokasi -->
                     <div id="view-3" class="app-view p-6 space-y-4 overflow-y-auto no-scrollbar" style="transform: translateX(100%);">
-                        <div class="bg-amber-500 text-slate-950 p-5 rounded-[2rem]">
-                            <p id="sum-s" class="font-black text-[11px] uppercase tracking-tight">-</p>
-                            <p id="sum-d" class="text-[10px] font-bold opacity-80 mt-1">-</p>
+                        <div class="bg-amber-500 text-slate-950 p-5 rounded-3xl">
+                            <p id="sum-s" class="font-black text-[10px] uppercase tracking-tight">-</p>
+                            <p id="sum-d" class="text-[9px] font-bold opacity-80 mt-1">-</p>
                         </div>
                         <div class="space-y-3">
-                            <div class="grid grid-cols-2 gap-3">
-                                <input type="text" id="i-name" placeholder="Full Name" class="bg-slate-800 border border-slate-700 p-4 rounded-2xl text-[11px] text-white w-full">
-                                <input type="tel" id="i-wa" placeholder="WhatsApp (08...)" class="bg-slate-800 border border-slate-700 p-4 rounded-2xl text-[11px] text-white w-full">
-                            </div>
+                            <input type="text" id="i-name" placeholder="Full Name" class="bg-slate-800 border border-slate-700 p-4 rounded-2xl text-[11px] text-white w-full">
+                            <input type="tel" id="i-wa" placeholder="WhatsApp (08...)" class="bg-slate-800 border border-slate-700 p-4 rounded-2xl text-[11px] text-white w-full">
                             <input type="url" id="i-maps" placeholder="Google Maps Link (Required)" class="bg-slate-800 border border-slate-700 p-4 rounded-2xl text-[11px] text-white w-full">
                             <input type="text" id="i-villa" placeholder="Villa / Hotel Name" class="bg-slate-800 border border-slate-700 p-4 rounded-2xl text-[11px] text-white w-full">
                             <textarea id="i-addr" rows="2" placeholder="Full Address Details" class="bg-slate-800 border border-slate-700 p-4 rounded-2xl text-[11px] text-white w-full resize-none"></textarea>
                             <textarea id="i-note" rows="2" placeholder="Special Request / Note" class="bg-slate-800 border border-slate-700 p-4 rounded-2xl text-[11px] text-white w-full resize-none"></textarea>
-                            <p class="text-[8px] text-slate-600 text-center uppercase tracking-widest font-black">Confirmed via WhatsApp Approval</p>
                         </div>
                     </div>
 
-                    <!-- Step 4 -->
+                    <!-- Langkah 4: Transisi Selesai -->
                     <div id="view-4" class="app-view items-center justify-center p-10 text-center" style="transform: translateX(100%);">
                         <i class="fa-brands fa-whatsapp text-6xl text-green-500 animate-pulse mb-6"></i>
-                        <h3 class="text-xl font-black text-white uppercase tracking-tighter">Connecting...</h3>
+                        <h3 class="text-xl font-black text-white uppercase tracking-tighter">Redirecting...</h3>
                     </div>
                 </div>
 
-                <footer class="p-6 bg-slate-900 border-t border-slate-800">
-                    <button id="btn-next" onclick="handleNext()" class="w-full py-5 bg-slate-800 text-slate-600 rounded-full font-black text-[10px] tracking-[0.2em] transition-all disabled:opacity-50 uppercase shadow-lg" disabled>Continue</button>
+                <footer class="p-6 bg-slate-900 border-t border-slate-800 flex flex-col gap-3">
+                    <button id="btn-next" onclick="handleNext()" class="w-full py-5 bg-slate-800 text-slate-600 rounded-full font-black text-[10px] tracking-[0.2em] uppercase transition-all disabled:opacity-50" disabled>Continue</button>
+                    <button id="btn-back" onclick="handlePrev()" class="hidden w-full py-2 text-[8px] font-black text-slate-500 uppercase tracking-widest text-center">Back</button>
                 </footer>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="py-20 px-6 bg-slate-950 border-t border-slate-900 text-center">
+    <!-- Bagian Last Call CTA (Prioritas 3) -->
+    <section class="py-20 px-6 bg-slate-900/40 border-t border-slate-800 text-center">
+        <div class="max-w-2xl mx-auto">
+            <h3 class="text-2xl font-extrabold text-white uppercase mb-6 tracking-tight">Ready to Look Sharp?</h3>
+            <a href="#booking" class="bg-amber-500 text-slate-950 px-12 py-5 rounded-full font-black uppercase tracking-widest shadow-xl hover:scale-105 active:scale-95 transition-all inline-block mb-4">
+                RESERVE YOUR SESSION
+            </a>
+            <p class="text-[10px] font-bold text-slate-500 uppercase tracking-[0.2em]">Same-day slots may fill quickly.</p>
+        </div>
+    </section>
+
+    <!-- Footer Kaki Halaman -->
+    <footer id="contact" class="py-20 px-6 bg-slate-950 border-t border-slate-800 text-center">
         <img src="https://i.postimg.cc/hv8HkW60/7E38079E-E3EB-41A3-BB85-31A344F99CE1.png" class="h-10 mx-auto mb-10 opacity-20 grayscale">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-5xl mx-auto text-left text-slate-500 mb-16">
-            <div>
-                <h4 class="text-amber-500 font-black text-[9px] uppercase tracking-widest mb-4">Location</h4>
-                <p class="text-xs">Available for Home & Private Service in Ubud & Across Bali Wide.</p>
-            </div>
-            <div>
-                <h4 class="text-amber-500 font-black text-[9px] uppercase tracking-widest mb-4">Contact</h4>
-                <p class="text-xs">WA: +62 889 8999 4780</p>
-                <p class="text-xs mt-1">IG: @probarbersolution</p>
-            </div>
-            <div>
-                <h4 class="text-amber-500 font-black text-[9px] uppercase tracking-widest mb-4">Operating</h4>
-                <p class="text-xs font-bold text-white">Daily: 11:00 AM - 08:00 PM</p>
-            </div>
+            <div><h4 class="text-amber-500 font-black text-[9px] uppercase tracking-widest mb-4">Ubud Hub</h4><p class="text-xs leading-relaxed">Jl. Suweta, Ubud, Bali. <br>Available for private villa bookings across Bali.</p></div>
+            <div><h4 class="text-amber-500 font-black text-[9px] uppercase tracking-widest mb-4">Contact</h4><p class="text-xs">WhatsApp: +62 889 8999 4780</p><p class="text-xs mt-1">IG: @probarbersolution</p></div>
+            <div><h4 class="text-amber-500 font-black text-[9px] uppercase tracking-widest mb-4">Status</h4><p class="text-xs font-bold text-white uppercase">Active Everyday</p><p class="text-xs mt-1">11:00 AM - 08:00 PM</p></div>
         </div>
         <p class="text-slate-800 text-[8px] font-black uppercase tracking-[0.4em] pt-10 border-t border-slate-900/50">PRO BARBER BALI SOLUTION • 2026</p>
     </footer>
 
+    <!-- Logika JavaScript untuk Widget Booking -->
     <script>
         const WA_ADMIN = "6288989994780";
         const SLOTS = ["11:00", "12:30", "14:00", "15:30", "17:00", "18:30", "19:30"];
@@ -383,7 +420,7 @@
             const tL = document.getElementById('time-list');
             SLOTS.forEach(tm => {
                 let el = document.createElement('div');
-                el.className = "py-3 border border-slate-800 rounded-xl text-center bg-slate-800/30 text-[10px] font-black text-white cursor-pointer transition-all";
+                el.className = "py-3 border border-slate-800 rounded-xl text-center bg-slate-800/30 text-[10px] font-black text-white cursor-pointer active:bg-amber-500";
                 el.innerText = tm;
                 el.onclick = function() {
                     document.querySelectorAll('#time-list div').forEach(t => t.classList.remove('bg-amber-500', 'text-slate-950', 'border-amber-500'));
@@ -398,20 +435,20 @@
             const btn = document.getElementById('btn-next'), bck = document.getElementById('btn-back'), tit = document.getElementById('step-title'), cnt = document.getElementById('step-count');
             [1,2,3,4].forEach(i => { document.getElementById(`view-${i}`).style.transform = `translateX(${(i - res.step) * 100}%)`; });
             if(res.step === 1){
-                tit.innerText = "Select Service"; cnt.innerText = "Langkah 1/3";
+                tit.innerText = "Select Service"; cnt.innerText = "Step 1/3";
                 btn.disabled = !res.sN; if(res.sN) { btn.classList.add('bg-amber-500', 'text-slate-950'); }
                 bck.classList.add('hidden');
             }
             if(res.step === 2){
-                tit.innerText = "Schedule Info"; cnt.innerText = "Langkah 2/3";
+                tit.innerText = "Schedule Info"; cnt.innerText = "Step 2/3";
                 bck.classList.remove('hidden'); btn.disabled = !(res.d && res.t); btn.innerText = "Continue";
                 btn.classList.toggle('bg-amber-500', res.d && res.t); btn.classList.toggle('text-slate-950', res.d && res.t);
             }
             if(res.step === 3){
-                tit.innerText = "Booking Details"; cnt.innerText = "Langkah 3/3";
+                tit.innerText = "Final Details"; cnt.innerText = "Step 3/3"; bck.classList.remove('hidden');
                 document.getElementById('sum-s').innerText = res.sN + " (IDR " + res.sP + ")";
                 document.getElementById('sum-d').innerText = res.d + " • Time " + res.t;
-                btn.innerText = "REQUEST VIA WHATSAPP"; btn.classList.replace('bg-amber-500', 'bg-green-600'); btn.classList.add('text-white');
+                btn.innerText = "SEND REQUEST VIA WA"; btn.classList.replace('bg-amber-500', 'bg-green-600'); btn.classList.add('text-white');
             }
         }
 
@@ -419,7 +456,6 @@
             const n = document.getElementById('i-name').value.trim(), ph = document.getElementById('i-wa').value.trim(), m = document.getElementById('i-maps').value.trim(), v = document.getElementById('i-villa').value.trim(), a = document.getElementById('i-addr').value.trim(), nt = document.getElementById('i-note').value.trim();
             if(!n || !ph || !m) return alert("Please fill Name, WhatsApp, and Google Maps Link.");
             res.step = 4; uUI();
-            document.getElementById('btn-next').classList.add('hidden'); document.getElementById('btn-back').classList.add('hidden');
             const msg = `Halo PRO BARBER BALI, saya ingin reservasi untuk Home Service:\n\n*Full Name:* ${n}\n*WhatsApp Number:* ${ph}\n*Google Maps Link:* ${m}\n*Villa / Hotel Name:* ${v}\n*Full Address:* ${a}\n\n*Service:* ${res.sN}\n*Schedule:* ${res.d} • ${res.t}\n\n*Request:* ${nt}\n\n_Booking is confirmed after WhatsApp approval._`;
             setTimeout(() => window.location.href = `https://wa.me/${WA_ADMIN}?text=${encodeURIComponent(msg)}`, 1500);
         }
