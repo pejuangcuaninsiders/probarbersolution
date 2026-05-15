@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visual Gallery | PRO BARBER BALI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #020617;
+            color: white;
+            scroll-behavior: smooth;
+        }
+        .gold { color: #f59e0b; }
+        .bg-gold { background: #f59e0b; }
+        
+        /* Item Gallery dengan Background Loading */
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 1.5rem;
+            aspect-ratio: 1 / 1;
+            cursor: pointer;
+            border: 1px solid #1e293b;
+            background: #0f172a; /* Placeholder warna sebelum gambar muncul */
+        }
+        .gallery-item img {
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .gallery-item:hover img {
+            transform: scale(1.1);
+            filter: brightness(0.6);
+        }
+
+        /* Container Video Responsive */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* Ratio 16:9 */
+            height: 0;
+            overflow: hidden;
+            border-radius: 2rem;
+            border: 1px solid #1e293b;
+            background: #000;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            border: none;
+        }
+
+        /* Lightbox Full Screen */
+        #lightbox {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.98);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            cursor: zoom-out;
+        }
+        #lightbox img {
+            max-width: 95%;
+            max-height: 95%;
+            border-radius: 0.5rem;
+            box-shadow: 0 0 50px rgba(0,0,0,0.5);
+        }
+    </style>
+</head>
+<body class="pt-24 pb-12">
+
+    <div id="lightbox" onclick="this.style.display='none'; document.body.style.overflow='auto'">
+        <img id="lightbox-img" src="" alt="Zoom">
+    </div>
+
+    <nav class="fixed top-0 left-0 w-full z-50 bg-[#020617]/90 backdrop-blur-lg border-b border-gray-800">
+        <div class="max-w-7xl mx-auto h-20 px-6 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3">
+                <h1 class="text-xl font-extrabold tracking-tight">PRO <span class="gold">BARBER</span> BALI</h1>
+            </a>
+            <a href="booking.html" class="bg-gold text-black px-6 py-2 rounded-full text-xs font-black uppercase tracking-widest">Book Now</a>
+        </div>
+    </nav>
+
+    <section class="px-6 mb-16 text-center">
+        <div class="inline-flex items-center gap-2 border border-gold/30 bg-gold/5 px-4 py-1.5 rounded-full mb-6">
+            <i class="fa-solid fa-bolt gold"></i>
+            <span class="text-[10px] uppercase tracking-[0.3em] font-bold gold">Ultra Fast Performance</span>
+        </div>
+        <h2 class="text-5xl md:text-7xl font-extrabold tracking-tighter mb-4 leading-tight">MASTERPIECE <br><span class="gold">GALLERY</span></h2>
+        <p class="text-gray-400 max-w-xl mx-auto text-sm">Visualisasi hasil kerja kelas dunia. Menggunakan teknologi Cloudinary untuk akses instan dan ringan tanpa menguras kuota.</p>
+    </section>
+
+    <section class="px-6 mb-24">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex items-center gap-3 mb-10 border-l-4 border-gold pl-4">
+                <h3 class="text-2xl font-black uppercase tracking-widest">Cinematic Stories</h3>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="video-container">
+                    <iframe src="https://player.cloudinary.com/embed/?cloud_name=dlaqlqxnd&public_id=video-1_hlg5e4" allowfullscreen></iframe>
+                </div>
+                <div class="video-container">
+                    <iframe src="https://player.cloudinary.com/embed/?cloud_name=dlaqlqxnd&public_id=video-2_ciyr8r" allowfullscreen></iframe>
+                </div>
+                <div class="video-container">
+                    <iframe src="https://player.cloudinary.com/embed/?cloud_name=dlaqlqxnd&public_id=video-3_rquzrd" allowfullscreen></iframe>
+                </div>
+                <div class="video-container">
+                    <iframe src="https://player.cloudinary.com/embed/?cloud_name=dlaqlqxnd&public_id=video-5_hekx9a" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="px-6">
+        <div class="max-w-7xl mx-auto">
+            
+            <div class="mb-20">
+                <div class="flex items-center gap-3 mb-10 border-l-4 border-gold pl-4">
+                    <h3 class="text-2xl font-black uppercase tracking-widest">Barber Portfolio</h3>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+                    <div class="gallery-item" onclick="openZoom(this)">
+                        <img loading="lazy" src="https://res.cloudinary.com/dlaqlqxnd/image/upload/w_800,q_auto,f_auto/v1778874474/IMG_9373_wargwm.jpg" alt="Barber">
+                    </div>
+                    <div class="gallery-item" onclick="openZoom(this)">
+                        <img loading="lazy" src="https://res.cloudinary.com/dlaqlqxnd/image/upload/w_800,q_auto,f_auto/v1778874475/IMG_9372_o6uraq.jpg" alt="Barber">
+                    </div>
+                    <div class="gallery-item" onclick="openZoom(this)">
+                        <img loading="lazy" src="https://res.cloudinary.com/dlaqlqxnd/image/upload/w_800,q_auto,f_auto/v1778874473/IMG_9374_sv0nam.jpg" alt="Barber">
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-20">
+                <div class="flex items-center gap-3 mb-10 border-l-4 border-pink-500 pl-4">
+                    <h3 class="text-2xl font-black uppercase tracking-widest">Nails Artistry</h3>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+                    <div class="gallery-item" onclick="openZoom(this)">
+                        <img loading="lazy" src="https://res.cloudinary.com/dlaqlqxnd/image/upload/w_800,q_auto,f_auto/v1778875014/caa1bbf9-8913-444e-bd43-e1778be604d1_gfh6gk.jpg" alt="Nails">
+                    </div>
+                    <div class="gallery-item" onclick="openZoom(this)">
+                        <img loading="lazy" src="https://res.cloudinary.com/dlaqlqxnd/image/upload/w_800,q_auto,f_auto/v1778875015/c09707d2-b0c8-4d8f-b4c0-b973a431db3c_jl9z4p.jpg" alt="Nails">
+                    </div>
+                    <div class="gallery-item" onclick="openZoom(this)">
+                        <img loading="lazy" src="https://res.cloudinary.com/dlaqlqxnd/image/upload/w_800,q_auto,f_auto/v1778875017/da499371-3b53-4e37-ac33-9f370f686142_yf9glp.jpg" alt="Nails">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="mt-24 py-20 bg-gray-900/30 border-t border-gray-800 text-center">
+        <h3 class="text-3xl font-black mb-8">Ready for VIP treatment?</h3>
+        <a href="booking.html" class="inline-block bg-gold text-black px-12 py-5 rounded-full font-black uppercase tracking-widest text-sm hover:scale-105 transition-all shadow-xl shadow-gold/20">
+            Book Appointment
+        </a>
+    </footer>
+
+    <script>
+        function openZoom(el) {
+            const lowRes = el.querySelector('img').src;
+            // Teknik mengganti thumbnail ke resolusi tinggi saat diklik
+            const highRes = lowRes.replace('w_800,', '');
+            document.getElementById('lightbox-img').src = highRes;
+            document.getElementById('lightbox').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+    </script>
+
+</body>
+</html>

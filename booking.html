@@ -1,0 +1,922 @@
+<!-- ========================= -->
+<!-- FILE : booking.html -->
+<!-- PRO BARBER BALI -->
+<!-- LUXURY BOOKING SYSTEM -->
+<!-- ========================= -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>VIP Booking | PRO BARBER BALI</title>
+
+<meta name="description" content="Book luxury barber & beauty home service in Bali. Choose services, date & time directly online.">
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+font-family:'Plus Jakarta Sans',sans-serif;
+background:#020617;
+color:white;
+scroll-behavior:smooth;
+}
+
+.gold{
+color:#f59e0b;
+}
+
+.bg-gold{
+background:#f59e0b;
+}
+
+.app-view{
+display:none;
+animation:fade .4s ease;
+}
+
+.app-view.active{
+display:block;
+}
+
+@keyframes fade{
+from{
+opacity:0;
+transform:translateY(10px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+.service-card{
+transition:0.25s ease;
+}
+
+.service-card:hover{
+transform:translateY(-4px);
+border-color:#f59e0b;
+}
+
+.no-scrollbar::-webkit-scrollbar{
+display:none;
+}
+
+</style>
+
+</head>
+
+<body class="pt-28 pb-16">
+
+<!-- NAVBAR -->
+
+<nav class="fixed top-0 left-0 w-full z-50 bg-[#020617]/95 backdrop-blur-xl border-b border-gray-800">
+
+<div class="max-w-7xl mx-auto h-20 px-6 flex items-center justify-between">
+
+<a href="index.html" class="flex items-center gap-3">
+
+<img src="image.png" alt="Logo" class="h-10 bg-white/10 rounded-lg p-1">
+
+<h1 class="text-xl font-extrabold tracking-tight">
+
+PRO <span class="gold">BARBER</span> BALI
+
+</h1>
+
+</a>
+
+<a href="contact.html"
+class="text-xs uppercase tracking-[0.2em] font-black text-gray-400 hover:text-[#f59e0b]">
+
+Contact
+
+</a>
+
+</div>
+
+</nav>
+
+<!-- HEADER -->
+
+<section class="px-6 mb-12">
+
+<div class="max-w-4xl mx-auto text-center">
+
+<div class="inline-flex items-center gap-2 border border-[#f59e0b]/30 bg-black/40 px-5 py-2 rounded-full mb-8">
+
+<span class="text-[10px] uppercase tracking-[0.3em] font-bold gold">
+
+VIP BOOKING SYSTEM
+
+</span>
+
+</div>
+
+<h1 class="text-5xl md:text-7xl font-extrabold tracking-tighter leading-none mb-8">
+
+BOOK YOUR <br>
+
+<span class="gold">
+LUXURY
+</span>
+
+SERVICE
+
+</h1>
+
+<p class="max-w-2xl mx-auto text-gray-400 text-lg leading-relaxed">
+
+Professional barber & beauty home service delivered directly to your villa or hotel in Bali.
+
+</p>
+
+</div>
+
+</section>
+
+<!-- BOOKING CARD -->
+
+<section class="px-6">
+
+<div class="max-w-3xl mx-auto">
+
+<div class="bg-gray-900 border border-gray-800 rounded-[2.5rem] overflow-hidden shadow-2xl">
+
+<!-- TOP -->
+
+<div class="p-8 border-b border-gray-800 bg-black/30">
+
+<div class="flex items-center justify-between mb-5">
+
+<h2 id="step-title"
+class="text-xs uppercase tracking-[0.3em] font-black text-white">
+
+SELECT SERVICES
+
+</h2>
+
+<span id="step-count"
+class="text-xs uppercase tracking-[0.2em] font-black gold">
+
+STEP 1 / 3
+
+</span>
+
+</div>
+
+<div class="w-full h-2 bg-gray-800 rounded-full overflow-hidden">
+
+<div id="progress-bar"
+class="h-full bg-gold rounded-full transition-all duration-500"
+style="width:33%;">
+
+</div>
+
+</div>
+
+</div>
+
+<!-- BODY -->
+
+<div class="p-6 md:p-8">
+
+<!-- STEP 1 -->
+
+<div id="view-1" class="app-view active">
+
+<div class="space-y-8 h-[550px] overflow-y-auto no-scrollbar pr-2">
+
+<!-- BARBER -->
+
+<div>
+
+<div class="flex items-center gap-3 mb-5">
+
+<i class="fa-solid fa-scissors gold"></i>
+
+<h3 class="uppercase tracking-[0.2em] text-sm font-black text-gray-400">
+
+Barber Services
+
+</h3>
+
+</div>
+
+<div class="space-y-4">
+
+<div onclick="toggleService('Men Haircut',300000,this)"
+class="service-card border border-gray-800 rounded-3xl p-5 cursor-pointer">
+
+<div class="flex justify-between items-start mb-3">
+
+<div>
+
+<h4 class="font-black text-lg">
+Men Haircut
+</h4>
+
+<p class="text-gray-500 text-sm">
+60 Minutes
+</p>
+
+</div>
+
+<span class="gold font-black text-xl">
+300K
+</span>
+
+</div>
+
+<p class="text-gray-400 text-sm leading-relaxed">
+
+Precision haircut with professional styling finish.
+
+</p>
+
+</div>
+
+<div onclick="toggleService('Haircut & Beard',450000,this)"
+class="service-card border border-gray-800 rounded-3xl p-5 cursor-pointer">
+
+<div class="flex justify-between items-start mb-3">
+
+<div>
+
+<h4 class="font-black text-lg">
+Haircut & Beard
+</h4>
+
+<p class="text-gray-500 text-sm">
+90 Minutes
+</p>
+
+</div>
+
+<span class="gold font-black text-xl">
+450K
+</span>
+
+</div>
+
+<p class="text-gray-400 text-sm leading-relaxed">
+
+Haircut combined with detailed beard contouring.
+
+</p>
+
+</div>
+
+<div onclick="toggleService('VIP Experience',600000,this)"
+class="service-card border border-[#f59e0b]/40 rounded-3xl p-5 cursor-pointer">
+
+<div class="flex justify-between items-start mb-3">
+
+<div>
+
+<div class="inline-block bg-gold text-black text-[10px] uppercase tracking-[0.2em] font-black px-3 py-1 rounded-full mb-3">
+
+VIP
+
+</div>
+
+<h4 class="font-black text-lg">
+VIP Experience
+</h4>
+
+<p class="text-gray-500 text-sm">
+90 Minutes
+</p>
+
+</div>
+
+<span class="gold font-black text-xl">
+600K
+</span>
+
+</div>
+
+<p class="text-gray-400 text-sm leading-relaxed">
+
+Haircut, beard trim, nose wax & premium styling ritual.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- NAILS -->
+
+<div>
+
+<div class="flex items-center gap-3 mb-5">
+
+<i class="fa-solid fa-hand-sparkles text-pink-400"></i>
+
+<h3 class="uppercase tracking-[0.2em] text-sm font-black text-gray-400">
+
+Beauty & Nails
+
+</h3>
+
+</div>
+
+<div class="space-y-4">
+
+<div onclick="toggleService('Classic Manicure',150000,this)"
+class="service-card border border-gray-800 rounded-3xl p-5 cursor-pointer">
+
+<div class="flex justify-between items-start mb-3">
+
+<div>
+
+<h4 class="font-black text-lg">
+Classic Manicure
+</h4>
+
+<p class="text-gray-500 text-sm">
+45 Minutes
+</p>
+
+</div>
+
+<span class="text-pink-400 font-black text-xl">
+150K
+</span>
+
+</div>
+
+<p class="text-gray-400 text-sm leading-relaxed">
+
+Classic manicure with shaping, cuticle care & polish.
+
+</p>
+
+</div>
+
+<div onclick="toggleService('Gel Manicure',300000,this)"
+class="service-card border border-gray-800 rounded-3xl p-5 cursor-pointer">
+
+<div class="flex justify-between items-start mb-3">
+
+<div>
+
+<h4 class="font-black text-lg">
+Gel Manicure
+</h4>
+
+<p class="text-gray-500 text-sm">
+60 Minutes
+</p>
+
+</div>
+
+<span class="text-pink-400 font-black text-xl">
+300K
+</span>
+
+</div>
+
+<p class="text-gray-400 text-sm leading-relaxed">
+
+Luxury gel polish with long-lasting shine.
+
+</p>
+
+</div>
+
+<div onclick="toggleService('Classic Pedicure',200000,this)"
+class="service-card border border-gray-800 rounded-3xl p-5 cursor-pointer">
+
+<div class="flex justify-between items-start mb-3">
+
+<div>
+
+<h4 class="font-black text-lg">
+Classic Pedicure
+</h4>
+
+<p class="text-gray-500 text-sm">
+60 Minutes
+</p>
+
+</div>
+
+<span class="text-pink-400 font-black text-xl">
+200K
+</span>
+
+</div>
+
+<p class="text-gray-400 text-sm leading-relaxed">
+
+Relaxing foot treatment with polish finish.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- STEP 2 -->
+
+<div id="view-2" class="app-view">
+
+<div class="space-y-10">
+
+<div>
+
+<h3 class="uppercase tracking-[0.2em] text-sm font-black text-gray-400 text-center mb-6">
+
+Select Date
+
+</h3>
+
+<div id="calendar"
+class="flex gap-4 overflow-x-auto pb-4 no-scrollbar">
+
+</div>
+
+</div>
+
+<div>
+
+<h3 class="uppercase tracking-[0.2em] text-sm font-black text-gray-400 text-center mb-6">
+
+Select Time
+
+</h3>
+
+<div id="time-grid"
+class="grid grid-cols-2 md:grid-cols-3 gap-4">
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- STEP 3 -->
+
+<div id="view-3" class="app-view">
+
+<div class="space-y-5">
+
+<input type="text"
+id="cust-name"
+placeholder="FULL NAME"
+class="w-full bg-gray-800 border border-gray-700 rounded-2xl px-5 py-5 outline-none text-sm font-bold uppercase tracking-[0.15em] focus:border-[#f59e0b]">
+
+<input type="text"
+id="cust-villa"
+placeholder="VILLA / HOTEL NAME"
+class="w-full bg-gray-800 border border-gray-700 rounded-2xl px-5 py-5 outline-none text-sm font-bold uppercase tracking-[0.15em] focus:border-[#f59e0b]">
+
+<input type="text"
+id="cust-maps"
+placeholder="GOOGLE MAPS LINK"
+class="w-full bg-gray-800 border border-gray-700 rounded-2xl px-5 py-5 outline-none text-sm font-bold uppercase tracking-[0.15em] focus:border-[#f59e0b]">
+
+<textarea
+id="cust-notes"
+placeholder="SPECIAL REQUESTS"
+rows="4"
+class="w-full bg-gray-800 border border-gray-700 rounded-2xl px-5 py-5 outline-none text-sm font-bold uppercase tracking-[0.15em] focus:border-[#f59e0b]"></textarea>
+
+</div>
+
+</div>
+
+<!-- SUMMARY -->
+
+<div class="mt-8 bg-black/40 border border-gray-800 rounded-3xl p-6">
+
+<div class="flex items-center justify-between mb-4">
+
+<h3 class="uppercase tracking-[0.2em] text-xs font-black text-gray-400">
+
+Booking Summary
+
+</h3>
+
+<span id="service-count"
+class="text-xs uppercase tracking-[0.2em] font-black gold">
+
+0 Services
+
+</span>
+
+</div>
+
+<div id="summary-services"
+class="space-y-3 mb-5">
+
+<p class="text-gray-500 text-sm">
+No service selected yet
+</p>
+
+</div>
+
+<div class="border-t border-gray-800 pt-5 space-y-2">
+
+<div class="flex justify-between text-sm">
+
+<span class="text-gray-400">
+Subtotal
+</span>
+
+<span id="subtotal">
+IDR 0
+</span>
+
+</div>
+
+<div class="flex justify-between text-sm">
+
+<span class="text-gray-400">
+Discount
+</span>
+
+<span id="discount" class="text-green-400">
+- IDR 0
+</span>
+
+</div>
+
+<div class="flex justify-between text-lg font-black">
+
+<span>
+Total
+</span>
+
+<span class="gold" id="total">
+IDR 0
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- DISCOUNT INFO -->
+
+<div class="mt-6 bg-gradient-to-r from-[#f59e0b] to-yellow-400 rounded-3xl p-6 text-black">
+
+<div class="flex items-start gap-4">
+
+<div class="w-14 h-14 rounded-full bg-black/10 flex items-center justify-center flex-shrink-0">
+
+<i class="fa-solid fa-gift text-2xl"></i>
+
+</div>
+
+<div>
+
+<h3 class="font-black text-xl mb-2">
+
+Special Discount
+
+</h3>
+
+<p class="font-medium leading-relaxed">
+
+Get <span class="font-black">10% OFF</span> when booking 2 or more services in one appointment.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- BUTTONS -->
+
+<div class="mt-8 flex flex-col gap-3">
+
+<button id="next-btn"
+onclick="nextStep()"
+disabled
+class="w-full py-5 rounded-2xl uppercase tracking-[0.25em] text-xs font-black bg-gray-800 text-gray-500 transition-all">
+
+Continue
+
+</button>
+
+<button id="prev-btn"
+onclick="prevStep()"
+class="hidden text-gray-500 text-xs uppercase tracking-[0.2em] font-black py-2">
+
+Go Back
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<script>
+
+const ADMIN_WA = "6288989994780";
+
+let state = {
+  step: 1,
+  services: [],
+  date: null,
+  time: null
+};
+
+function formatRupiah(num){
+  return `IDR ${num.toLocaleString('id-ID')}`;
+}
+
+function toggleService(name,price,el){
+  const existing = state.services.find(s => s.name === name);
+
+  if(existing){
+    state.services = state.services.filter(s => s.name !== name);
+    el.classList.remove('border-[#f59e0b]','bg-[#f59e0b]/5');
+  }else{
+    state.services.push({name,price});
+    el.classList.add('border-[#f59e0b]','bg-[#f59e0b]/5');
+  }
+
+  updateSummary();
+  validate();
+}
+
+function updateSummary(){
+  const container = document.getElementById('summary-services');
+  const count = document.getElementById('service-count');
+  container.innerHTML = "";
+
+  let subtotal = 0;
+  state.services.forEach(service=>{
+    subtotal += service.price;
+    const div = document.createElement('div');
+    div.className = "flex justify-between text-sm";
+    div.innerHTML = `
+      <span class="text-gray-300">${service.name}</span>
+      <span class="gold font-bold">${formatRupiah(service.price)}</span>
+    `;
+    container.appendChild(div);
+  });
+
+  if(state.services.length === 0){
+    container.innerHTML = `
+      <p class="text-gray-500 text-sm">
+        No service selected yet
+      </p>
+    `;
+  }
+
+  count.innerText = `${state.services.length} Services`;
+
+  let discount = 0;
+  if(state.services.length >= 2){
+    discount = subtotal * 0.10;
+  }
+
+  const total = subtotal - discount;
+
+  document.getElementById('subtotal').innerText = formatRupiah(subtotal);
+  document.getElementById('discount').innerText = `- ${formatRupiah(discount)}`;
+  document.getElementById('total').innerText = formatRupiah(total);
+}
+
+function buildCalendar(){
+  const cal = document.getElementById('calendar');
+  
+  // Jika DOM kosong, bangun elemen kalendernya (14 hari)
+  if(cal.children.length === 0){
+    const months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+    const days = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+    const today = new Date();
+
+    for(let i=0;i<14;i++){
+      let d = new Date();
+      d.setDate(today.getDate()+i);
+
+      let div = document.createElement('div');
+      div.className = "calendar-day flex-shrink-0 w-24 rounded-3xl border border-gray-800 bg-gray-800/30 p-5 text-center cursor-pointer transition-all hover:border-[#f59e0b]";
+
+      div.innerHTML = `
+        <p class="text-[10px] uppercase tracking-[0.2em] text-gray-500 font-black mb-2">
+          ${days[d.getDay()]}
+        </p>
+        <h3 class="text-3xl font-black text-white">
+          ${d.getDate()}
+        </h3>
+        <p class="text-xs text-gray-500 mt-2">
+          ${months[d.getMonth()]}
+        </p>
+      `;
+
+      div.onclick = function(){
+        document.querySelectorAll('.calendar-day').forEach(x=>{
+          x.classList.remove('border-[#f59e0b]', 'bg-[#f59e0b]/10');
+          x.classList.add('border-gray-800', 'bg-gray-800/30');
+        });
+
+        this.classList.remove('border-gray-800', 'bg-gray-800/30');
+        this.classList.add('border-[#f59e0b]', 'bg-[#f59e0b]/10');
+
+        state.date = `${d.getDate()} ${months[d.getMonth()]} ${d.getFullYear()}`;
+        state.time = null; 
+        
+        buildTimeSlots(d);
+        validate();
+      };
+
+      cal.appendChild(div);
+    }
+  }
+
+  // JEDA TIMER: Menjamin layar aktif dulu, baru trigger klik otomatis pada hari pertama
+  setTimeout(() => {
+    const firstDay = cal.querySelector('.calendar-day');
+    if(firstDay) {
+      firstDay.click();
+    }
+  }, 100);
+}
+
+function buildTimeSlots(selectedDate){
+  const grid = document.getElementById('time-grid');
+  grid.innerHTML = "";
+
+  const now = new Date();
+  const selected = new Date(selectedDate);
+  const isToday = selected.toDateString() === now.toDateString();
+
+  const allTimes = ["11:00", "13:00", "15:00", "17:00", "19:00"];
+
+  allTimes.forEach(t=>{
+    const [hour,minute] = t.split(":");
+    let disabled = false;
+
+    if(isToday){
+      const currentHour = now.getHours();
+      if(parseInt(hour) <= currentHour + 1){
+        disabled = true;
+      }
+    }
+
+    let div = document.createElement('div');
+    
+    if(disabled) {
+      div.className = "border border-gray-800 bg-gray-900/50 rounded-2xl py-5 text-center text-gray-600 cursor-not-allowed uppercase tracking-[0.2em] text-sm font-black";
+      div.innerText = `${t} FULL`;
+    } else {
+      div.className = "time-slot border border-gray-800 bg-gray-800/30 rounded-2xl py-5 text-center cursor-pointer uppercase tracking-[0.2em] text-sm font-black transition-all hover:border-[#f59e0b] text-white";
+      div.innerText = t;
+
+      div.onclick = function(){
+        document.querySelectorAll('.time-slot').forEach(x=>{
+          x.classList.remove('bg-[#f59e0b]','text-black');
+          x.classList.add('bg-gray-800/30', 'text-white');
+        });
+
+        this.classList.remove('bg-gray-800/30', 'text-white');
+        this.classList.add('bg-[#f59e0b]','text-black');
+        
+        state.time = t;
+        validate();
+      };
+    }
+
+    grid.appendChild(div);
+  });
+}
+
+function validate(){
+  const btn = document.getElementById('next-btn');
+  let valid = false;
+
+  if(state.step === 1 && state.services.length > 0){
+    valid = true;
+  }
+
+  if(state.step === 2 && state.date && state.time){
+    valid = true;
+  }
+
+  if(state.step === 3){
+    valid = true;
+  }
+
+  btn.disabled = !valid;
+
+  btn.className = valid
+    ? "w-full py-5 rounded-2xl uppercase tracking-[0.25em] text-xs font-black bg-[#f59e0b] text-black shadow-xl shadow-[#f59e0b]/20 transition-all hover:scale-[1.02]"
+    : "w-full py-5 rounded-2xl uppercase tracking-[0.25em] text-xs font-black bg-gray-800 text-gray-500 transition-all";
+
+  btn.innerText = state.step === 3 ? "SEND TO WHATSAPP" : "CONTINUE";
+}
+
+function nextStep(){
+  if(state.step < 3){
+    state.step++;
+    
+    // PERBAIKAN UTAMA: Aktifkan UI layarnya dulu di DOM
+    updateUI();
+    
+    // Baru setelah layar aktif (display: block), buat kalender & jalankan klik otomatisnya
+    if(state.step === 2){
+      buildCalendar();
+    }
+  }else{
+    const name = document.getElementById('cust-name').value;
+    const villa = document.getElementById('cust-villa').value;
+    const maps = document.getElementById('cust-maps').value;
+    const notes = document.getElementById('cust-notes').value;
+
+    let serviceText = "";
+    let subtotal = 0;
+
+    state.services.forEach((s,index)=>{
+      subtotal += s.price;
+      serviceText += `${index+1}. ${s.name} - ${formatRupiah(s.price)}\n`;
+    });
+
+    let discount = 0;
+    if(state.services.length >= 2){
+      discount = subtotal * 0.10;
+    }
+
+    const total = subtotal - discount;
+
+    const text = `✨ *NEW VIP BOOKING* ✨
+
+📍 *Services:*
+${serviceText}
+
+📅 *Date:* ${state.date}
+⏰ *Time:* ${state.time}
+
+👤 *Client:* ${name}
+🏡 *Villa/Hotel:* ${villa}
+📌 *Maps Link:* ${maps}
+
+📝 *Special Request:* ${notes}
+
+💰 *Subtotal:* ${formatRupiah(subtotal)}
+🎁 *Discount:* ${formatRupiah(discount)}
+✅ *Total:* ${formatRupiah(total)}
+
+Thank you for booking PRO BARBER BALI`;
+
+    window.location.href = `https://wa.me/${ADMIN_WA}?text=${encodeURIComponent(text)}`;
+  }
+}
+
+function prevStep(){
+  if(state.step > 1){
+    state.step--;
+    updateUI();
+  }
+}
+
+function updateUI(){
+  document.querySelectorAll('.app-view').forEach((v,i)=>{
+    v.classList.toggle('active',i+1===state.step);
+  });
+
+  document.getElementById('step-count').innerText = `STEP ${state.step} / 3`;
+  document.getElementById('progress-bar').style.width = `${(state.step/3)*100}%`;
+  document.getElementById('prev-btn').classList.toggle('hidden',state.step===1);
+
+  validate();
+}
+
+</script>
+
+</body>
+</html>
